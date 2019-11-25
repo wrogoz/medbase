@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material/layout-grid": "^4.0.0",
+    "@rmwc/button": "^5.7.0",
     "@rmwc/grid": "^5.7.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
