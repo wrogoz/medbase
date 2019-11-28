@@ -29,6 +29,9 @@ const StyledHeader = styled.header`
     flex-direction:column;
     align-items:center;
     font-family: 'Montserrat', sans-serif;
+    position:sticky;
+    top:1px;
+    background-color:#fff;
 `
 const AppTitle = styled.h1`
     margin:0;
@@ -47,5 +50,5 @@ const SubTitle = styled.h2`
     letter-spacing:0.1em;
     color:#9e9a9a;
     font-weight:400;
-
+    padding-bottom:20px;
 `

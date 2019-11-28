@@ -37,6 +37,18 @@ export default class CorePage extends React.Component <{},{}>{
                     <CoreListItem>
                         <button>neurolog</button>
                     </CoreListItem>
+                    <CoreListItem>
+                        <button>neurolog</button>
+                    </CoreListItem>
+                    <CoreListItem>
+                        <button>neurolog</button>
+                    </CoreListItem>
+                    <CoreListItem>
+                        <button>neurolog</button>
+                    </CoreListItem>
+                    <CoreListItem>
+                        <button>neurolog</button>
+                    </CoreListItem>
                 </CoreList>
             </Core>
             
@@ -59,7 +71,7 @@ const Circle = styled.div`
     align-items:center;
     border:1px solid #747474;
     border-radius:50%;
-    margin-top:30px;
+    margin-top:20px;
     p{
         font-size:64px;
         
@@ -75,10 +87,12 @@ const CoreMessage = styled.p`
     letter-spacing:0.11em;
     color:#747474;
     margin:40px 0;
+    
 
 `
 
 const CoreList = styled.ul`
+    overflow-y:scroll;
     width:100%;
     margin:0;
     padding:0;

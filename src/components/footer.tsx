@@ -22,7 +22,7 @@ const StyledFooter = styled.footer`
     justify-content:center;
     align-items:center;
     background-color:#f3f3f3;
-    position:fixed;
+    position:sticky;
     bottom:0;
     p{
         font-size:0.75em;
