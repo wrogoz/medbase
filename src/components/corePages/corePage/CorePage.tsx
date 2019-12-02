@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components';
 import List from './List'
 
-import {observer, inject} from 'mobx-react';
+import {observer} from 'mobx-react';
 
 interface Core{
     chooseText:string,
     pageNumber:string,
+    listType:string[]
   
 }
-@inject('store')
+
 @observer
 export default class CorePage extends React.Component <Core,{}>{
     render(){
@@ -24,7 +25,7 @@ export default class CorePage extends React.Component <Core,{}>{
                 <CoreMessage>
                     Wybierz {this.props.chooseText}
                 </CoreMessage>
-                <List/>
+                <List listType={this.props.listType}/>
                 
             </Core>
             

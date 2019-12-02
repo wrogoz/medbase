@@ -1,45 +1,29 @@
 import React from 'react'
 import styled from 'styled-components';
-export default class List extends React.Component<{},{}>{
+import {observer} from 'mobx-react'
+
+
+
+interface listT{
+    listType:string[]
+}
+@observer
+export default class List extends React.Component<listT,{}>{
     render(){
+
+        const listItems = this.props.listType.map((el,i)=>{
+            const id = i * (Math.floor(Math.random()*10000))
+            return (
+                
+                <CoreListItem key={id}>
+                    <button>{el}</button>
+                </CoreListItem>
+            )
+        })
+
         return(
             <CoreList>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
+                    {listItems}
                 </CoreList>
         )
     }
@@ -72,6 +56,7 @@ const CoreListItem = styled.li`
         color:#f2f2f2;
         letter-spacing:-3%;
         font-size:14px;
+        text-transform:uppercase
         
     }
 `
