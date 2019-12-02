@@ -1,8 +1,9 @@
 import React from 'react'
 import '@material/layout-grid/dist/mdc.layout-grid.css';
 import Header from './../Header';
-import CorePage from '../corePages/corePage/CorePage'
 import Footer from './../footer';
+import ChooseSpecialistPage from './../corePages/ChooseSpecialistPage';
+import ChooseDistrictPage from '../corePages/ChooseDistrictPage';
 export default class Layout extends React.Component<{},{}>{
     render(){
         return(
@@ -11,7 +12,7 @@ export default class Layout extends React.Component<{},{}>{
                     title="medbase"
                     subtitle="Wyszukiwarka lekarzy NFZ"
                 />
-                <CorePage/>
+                <ChooseDistrictPage />
                 <Footer/>
             </div>
         )

@@ -1,55 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
+import List from './List'
 
-export default class CorePage extends React.Component <{},{}>{
+import {observer, inject} from 'mobx-react';
+
+interface Core{
+    chooseText:string,
+    pageNumber:string,
+  
+}
+@inject('store')
+@observer
+export default class CorePage extends React.Component <Core,{}>{
     render(){
+
+
+     
         return(
             <Core>
                 <Circle>
-                    <p>1</p>
+                    <p>{this.props.pageNumber}</p>
                 </Circle>
                 <CoreMessage>
-                    Wybierz specjalizację
+                    Wybierz {this.props.chooseText}
                 </CoreMessage>
-
-                <CoreList>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                    <CoreListItem>
-                        <button>neurolog</button>
-                    </CoreListItem>
-                </CoreList>
+                <List/>
+                
             </Core>
             
         )
@@ -91,33 +67,4 @@ const CoreMessage = styled.p`
 
 `
 
-const CoreList = styled.ul`
-    overflow-y:scroll;
-    width:100%;
-    margin:0;
-    padding:0;
-    display:flex;
-    justify-content:space-evenly;
-    flex-wrap:wrap;
-    list-style:none;
-`
 
-const CoreListItem = styled.li`
-    display:flex;
-    justify-content:center;
-    margin-bottom:17px;
-    width:39%;
-    button{
-        height:36px;
-        width:142px;
-        outline:none;
-        border:none;
-        border-radius:7px;
-      
-        background-color:#000;
-        color:#f2f2f2;
-        letter-spacing:-3%;
-        font-size:14px;
-        
-    }
-`
