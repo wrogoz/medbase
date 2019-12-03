@@ -11,8 +11,7 @@ export default class ChooseDistrictPage extends React.Component<{},{}>{
                 pageNumber="2"
                 chooseText="województwo"
                 listType={store.district}
-                followTo="/cityFinder"
-                
+                followTo="/citySearch"
             />
         )
     }

@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
-import List from './List'
+import DisplayData from './displayData/DisplayDataComponent'
 
 import {observer} from 'mobx-react';
 
 interface Core{
-    chooseText:string,
-    pageNumber:string,
-    listType:string[]
+    chooseText:string
+    pageNumber:string
+    listType?:string[]
     followTo:string
+    
 }
 
 @observer
@@ -22,11 +23,14 @@ export default class CorePage extends React.Component <Core,{}>{
                 <Circle>
                     <p>{this.props.pageNumber}</p>
                 </Circle>
+
                 <CoreMessage>
                     Wybierz {this.props.chooseText}
                 </CoreMessage>
-                <List listType={this.props.listType}
-                      followTo={this.props.followTo}  
+
+                <DisplayData 
+                    listType={this.props.listType}
+                    followTo={this.props.followTo} 
                 />
                 
             </Core>
