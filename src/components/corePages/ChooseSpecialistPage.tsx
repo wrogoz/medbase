@@ -11,6 +11,7 @@ export default class ChooseSpecialistPage extends React.Component<{},{}>{
                 pageNumber="1"
                 chooseText="specjalistę"
                 listType={store.specialization}
+                followTo="/district"
                
             />
         )

@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 import {observer} from 'mobx-react'
-
+import {Link} from 'react-router-dom';
 
 
 interface listT{
     listType:string[]
+    followTo:string
 }
 @observer
 export default class List extends React.Component<listT,{}>{
@@ -16,7 +17,9 @@ export default class List extends React.Component<listT,{}>{
             return (
                 
                 <CoreListItem key={id}>
-                    <button>{el}</button>
+                    <button>
+                        <Link to={this.props.followTo}>{el}</Link>
+                    </button>
                 </CoreListItem>
             )
         })

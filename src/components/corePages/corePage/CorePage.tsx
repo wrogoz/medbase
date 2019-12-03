@@ -8,7 +8,7 @@ interface Core{
     chooseText:string,
     pageNumber:string,
     listType:string[]
-  
+    followTo:string
 }
 
 @observer
@@ -25,7 +25,9 @@ export default class CorePage extends React.Component <Core,{}>{
                 <CoreMessage>
                     Wybierz {this.props.chooseText}
                 </CoreMessage>
-                <List listType={this.props.listType}/>
+                <List listType={this.props.listType}
+                      followTo={this.props.followTo}  
+                />
                 
             </Core>
             
