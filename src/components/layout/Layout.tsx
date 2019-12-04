@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom'
 import ChooseSpecialistPage from './../corePages/ChooseSpecialistPage';
 import ChooseDistrictPage from '../corePages/ChooseDistrictPage';
 import CitySearchPage from '../corePages/CitySearchPage';
+import ResultsPage from '../corePages/ResultsPage';
 
 export default class Layout extends React.Component<{},{}>{
     render(){
@@ -21,6 +22,7 @@ export default class Layout extends React.Component<{},{}>{
                         <Route exact path="/" component={ChooseSpecialistPage} />
                         <Route exact path="/district" component={ChooseDistrictPage} />
                         <Route exact path="/citySearch" component={CitySearchPage} />
+                        <Route exact path="/results" component={ResultsPage} />
                     </Switch>
                     
                     <Footer/>

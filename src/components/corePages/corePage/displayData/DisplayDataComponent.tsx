@@ -35,7 +35,7 @@ export default class DisplayData extends React.Component<DisplayDataInterface,{}
         }else{
             displayData=
                         <CitySearchBox>
-                            <input></input>
+                            <input/>
                             <Button
                             followTo={this.props.followTo}
                             buttonTxt="Wynik wyszukiwania" />
@@ -75,4 +75,13 @@ const CitySearchBox = styled.div`
     align-items:center;
     padding-top:10%;
     min-height:46vh;
+        input{
+            outline:none;
+            border:none;
+            border-bottom:1px solid #747474;
+            text-align:center;
+            text-transform:uppercase;
+            width:75%;
+            font-size:22px;
+        }
 `
