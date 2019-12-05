@@ -1,70 +1,37 @@
 import React from 'react'
 import styled from 'styled-components';
+import {inject, observer} from 'mobx-react';
+import store from '../../store/store';
 
 
+@inject('store')
+@observer
 export default class Results extends React.Component<{},{}>{
+
     render(){
+
+        const displayResults = store.dataApi.map((el,i)=>{
+            return (
+                <Result key={`result-${i}`}>
+                    <Date>
+                        {el.date}
+                    </Date>
+                    <Place>
+                        {el.place}
+                    </Place>
+                    <Adress>
+                        {el.adress}
+                    </Adress>
+                    <Phone>
+                        {el.phone}
+                    </Phone>
+                </Result>
+            )
+        })
+
         return(
             <ResultsList>
-                <Result>
-                    <Date>
-                        13.12.2019
-                    </Date>
-                    <Place>
-                    przychodnia agmed spółka z ograniczoną odpowiedzialnością
-                    </Place>
-                    <Adress>
-                    KATOWICE, xawerego dunikowskiego 12-14-16
-                    </Adress>
-                    <Phone>
-                    48 32 258 24 02
-                    </Phone>
-                </Result>
-
-                <Result>
-                    <Date>
-                        13.12.2019
-                    </Date>
-                    <Place>
-                    przychodnia agmed spółka z ograniczoną odpowiedzialnością
-                    </Place>
-                    <Adress>
-                    KATOWICE, xawerego dunikowskiego 12-14-16
-                    </Adress>
-                    <Phone>
-                    48 32 258 24 02
-                    </Phone>
-                </Result>
-
-                <Result>
-                    <Date>
-                        13.12.2019
-                    </Date>
-                    <Place>
-                    przychodnia agmed spółka z ograniczoną odpowiedzialnością
-                    </Place>
-                    <Adress>
-                    KATOWICE, xawerego dunikowskiego 12-14-16
-                    </Adress>
-                    <Phone>
-                    48 32 258 24 02
-                    </Phone>
-                </Result>
-
-                <Result>
-                    <Date>
-                        13.12.2019
-                    </Date>
-                    <Place>
-                    przychodnia agmed spółka z ograniczoną odpowiedzialnością
-                    </Place>
-                    <Adress>
-                    KATOWICE, xawerego dunikowskiego 12-14-16
-                    </Adress>
-                    <Phone>
-                    48 32 258 24 02
-                    </Phone>
-                </Result>
+               {displayResults}
             </ResultsList>
         )
     }

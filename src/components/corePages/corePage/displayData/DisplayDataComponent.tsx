@@ -1,19 +1,27 @@
 import React from 'react'
 import styled from 'styled-components';
-import {observer} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 import Button from './buttons/button';
+import store from '../../../../store/store';
 
-interface DisplayDataInterface{
+interface DisplayDataProps{
     listType?:string[] 
     followTo:string
    
    
     
 }
+@inject("store")
 @observer
-export default class DisplayData extends React.Component<DisplayDataInterface,{}>{
+export default class DisplayData extends React.Component<DisplayDataProps,{}>{
+    
+    observeUserCitySearch = (e:any)=>{
+        store.searchCity = e.target.value
+    }
+    
+    
     render(){
-        let displayData:JSX.Element | JSX.Element[];
+        let displayData:JSX.Element | JSX.Element[] | any;
         if(this.props.listType){
             displayData = this.props.listType.map((el,i)=>{
                 const id = i * (Math.floor(Math.random()*10000))
@@ -35,7 +43,9 @@ export default class DisplayData extends React.Component<DisplayDataInterface,{}
         }else{
             displayData=
                         <CitySearchBox>
-                            <input/>
+                            <input 
+                                onChange={this.observeUserCitySearch}
+                            />
                             <Button
                             followTo={this.props.followTo}
                             buttonTxt="Wynik wyszukiwania" />
