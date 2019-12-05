@@ -12,6 +12,7 @@ export default class Results extends React.Component<{},{}>{
 
         const displayResults = store.dataApi.map((el,i)=>{
             return (
+                
                 <Result key={`result-${i}`}>
                     <Date>
                         {el.date}
@@ -20,7 +21,7 @@ export default class Results extends React.Component<{},{}>{
                         {el.place}
                     </Place>
                     <Adress>
-                        {el.adress}
+                        {el.address}
                     </Adress>
                     <Phone>
                         {el.phone}
