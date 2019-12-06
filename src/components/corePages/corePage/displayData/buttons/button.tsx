@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {inject, observer} from 'mobx-react'
 import {Link} from 'react-router-dom';
 import store from '../../../../../store/store';
-import axios from 'axios';
+import getDataFromApi from '../../../../../API/api'
 
 interface ButtonProps{
     buttonTxt:string 
@@ -24,31 +24,21 @@ export default class Button extends React.Component<ButtonProps,{}>{
     saveValueToStore=()=>{
 
         if(this.props.followTo === '/district'){
-           store.searchSpecialization = this.refButton.current!.textContent;
+         store.specializationNameToOfficialName(this.refButton.current.textContent)
+          
+           console.log(store.searchSpecialization)
         }
          else if(this.props.followTo === '/citySearch'){
-           store.searchDistrict = this.refButton.current.textContent;
+
+           store.districtNameToDistrictCode(this.refButton.current.textContent)
+
+            console.log(this.refButton.current.textContent)
+           console.log(store.searchDistrict)
+
         }else if(this.props.followTo=== '/results'){
 
-            axios.get(`https://api.nfz.gov.pl/app-itl-api/queues?province=12&locality=KATOWICE&case=1&benefit=PORADNIA+NEUROLOGICZNA&format=json`)
-                .then(function (res) {
-                    const data =res.data.data.map((el: any )=>{
-                        return {
-                                date:el.attributes.dates.date,
-                                place:el.attributes.provider,
-                                address:`${el.attributes.locality} ${el.attributes.address}`,
-                                phone:el.attributes.phone
-                                }
-                    })
-                    store.dataApi=data;
-                   
-                    
-      
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
+            getDataFromApi(store);
+            
       
     };
 }
