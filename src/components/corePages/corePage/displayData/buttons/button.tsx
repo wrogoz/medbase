@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {inject, observer} from 'mobx-react'
 import {Link} from 'react-router-dom';
 import store from '../../../../../store/store';
-import getDataFromApi from '../../../../../API/api'
+import {getCityDataFromApi, getDistrictDataFromApi} from '../../../../../API/api'
 
 interface ButtonProps{
     buttonTxt:string 
@@ -36,8 +36,23 @@ export default class Button extends React.Component<ButtonProps,{}>{
            console.log(store.searchDistrict)
 
         }else if(this.props.followTo=== '/results'){
+            console.log(store.dataApi.length)
+            
+                if(store.searchCity.length>0 && store.dataApi.length>1){
+                    getCityDataFromApi(store);
+                    
+                }else{
+                    if(store.searchCity.length>1 && store.dataApi.length <=1 ){
+                        alert(" couldn't find city name")
+                    }
+                    getDistrictDataFromApi(store);
+                }
 
-            getDataFromApi(store);
+                
+               
+                    
+                
+            
             
       
     };
