@@ -21,7 +21,7 @@ export default class Button extends React.Component<ButtonProps,{}>{
         this.refButton = React.createRef();
     }
 
-    saveValueToStore=()=>{
+    saveValueToStore= async ()=>{
 
         if(this.props.followTo === '/district'){
          store.specializationNameToOfficialName(this.refButton.current.textContent)
@@ -37,18 +37,24 @@ export default class Button extends React.Component<ButtonProps,{}>{
 
         }else if(this.props.followTo=== '/results'){
             console.log(store.dataApi.length)
-            
-                if(store.searchCity.length>0 && store.dataApi.length>1){
-                    getCityDataFromApi(store);
+        
+            // -----------> TU ZAMIENIC NA PROMISE/ASYNC <------------
+                if(store.searchCity.length>0 ){
+                     await getCityDataFromApi(store)
+                     if(store.dataApi.length<=1){
+                            
+                        getDistrictDataFromApi(store)
+                    } 
                     
-                }else{
-                    if(store.searchCity.length>1 && store.dataApi.length <=1 ){
-                        alert(" couldn't find city name")
-                    }
+            //-------------------------------------------------------       
+                }
+                
+                else{
+                    
                     getDistrictDataFromApi(store);
                 }
 
-                
+              
                
                     
                 

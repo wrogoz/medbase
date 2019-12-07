@@ -2,7 +2,7 @@
  import store from '../store/store'
  
  
- const getCityDataFromApi = (storeName:any)=>{
+ const getCityDataFromApi = async (storeName:any)=>{
     axios.get(`https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&locality=${store.searchCity}&case=1&benefit=${store.searchSpecialization}&format=json`)
                 .then(function (res) {
                     
@@ -25,7 +25,7 @@
                 })
 }
 
-const getDistrictDataFromApi = (storeName:any)=>{
+const getDistrictDataFromApi =  (storeName:any)=>{
     axios.get(`https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&case=1&benefit=${store.searchSpecialization}&format=json`)
                 .then(function (res) {
                     
