@@ -22,45 +22,28 @@ export default class Button extends React.Component<ButtonProps,{}>{
     }
 
     saveValueToStore= async ()=>{
-
+//  -----------------SAVE SPECIALIZATION TO STORE
         if(this.props.followTo === '/district'){
          store.specializationNameToOfficialName(this.refButton.current.textContent)
           
            console.log(store.searchSpecialization)
         }
+//  -----------------SAVE DISTRICT TO STORE        
          else if(this.props.followTo === '/citySearch'){
 
            store.districtNameToDistrictCode(this.refButton.current.textContent)
 
-            console.log(this.refButton.current.textContent)
+          
            console.log(store.searchDistrict)
-
+//  -----------------SAVE CITY NAME TO STORE (OPTIONAL)
         }else if(this.props.followTo=== '/results'){
-            console.log(store.dataApi.length)
-        
-            // -----------> TU ZAMIENIC NA PROMISE/ASYNC <------------
-                if(store.searchCity.length>0 ){
-                     await getCityDataFromApi(store)
-                     if(store.dataApi.length<=1){
-                            
-                        getDistrictDataFromApi(store)
-                    } 
-                    
-            //-------------------------------------------------------       
-                }
-                
+           
+        if(store.searchCity.length>0 ){
+                   getCityDataFromApi(store)
+               }        
                 else{
-                    
                     getDistrictDataFromApi(store);
                 }
-
-              
-               
-                    
-                
-            
-            
-      
     };
 }
     render(){

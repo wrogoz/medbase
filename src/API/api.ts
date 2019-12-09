@@ -15,9 +15,14 @@
                                 }
                     })
                     storeName.dataApi=data;
-                  console.log(data)
-                    
+                 
+                    return res.data.data
       
+                })
+                .then((res)=>{
+                    if(res.length<1){
+                        getDistrictDataFromApi(store)
+                    }
                 })
                 .catch(function (error) {
                     // handle error
