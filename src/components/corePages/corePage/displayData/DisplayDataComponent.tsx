@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {inject, observer} from 'mobx-react'
 import Button from './buttons/button';
 import store from '../../../../store/store';
-
+import search from '../../../../img/search.svg';
 interface DisplayDataProps{
     listType?:string[] 
     followTo:string
@@ -40,7 +40,9 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
            displayData= <CoreList>
                     {displayData}
             </CoreList>
+
         }else{
+
             displayData=
                         <CitySearchBox>
                             <input 
@@ -66,6 +68,7 @@ const CoreList = styled.ul`
     overflow-y:scroll;
     width:100%;
     margin:0;
+    margin-bottom:10%;
     padding:0;
     display:flex;
     justify-content:space-evenly;
@@ -85,7 +88,19 @@ const CitySearchBox = styled.div`
     align-items:center;
     padding-top:10%;
     min-height:46vh;
+    background-image:url("${search}");
+    background-size: 48%;
+    background-position: 53% 0%
+    background-repeat:no-repeat;
+   
+
+    
         input{
+            padding:5px 0;
+            margin-bottom: 15%;
+            margin-top: 1%;
+            background:none;
+          
             outline:none;
             border:none;
             border-bottom:1px solid #747474;

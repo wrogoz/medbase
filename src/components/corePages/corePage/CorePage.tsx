@@ -69,7 +69,7 @@ const CoreMessage = styled.p`
     text-transform:uppercase;
     letter-spacing:0.11em;
     color:#747474;
-    margin:40px 0;
+    margin: 40px 0 24px 0px;
     
 
 `

@@ -1,6 +1,6 @@
 import {observable} from 'mobx'
  class Store{
-    @observable  specialization:string[]=['neurolog',"ortopeda","ginekolog","kardiolog","pulmonolog","geriatra","chirurg","neurochirurg", "endokrynolog"]
+    @observable  specialization:string[]=['dermatolog','neurolog',"ortopeda","ginekolog","kardiolog","pulmonolog","geriatra","chirurg","neurochirurg", "endokrynolog"]
     @observable  district:string[] = ['dolnośląskie','kujawsko-pom.','lubelskie','lubuskie','łódzkie',"małopolskie","mazowieckie", 'opolskie', 'podkarpackie', 'podlaskie', 'pomorskie', 'śląskie', 'świętokrzyskie', 'warm.mazurskie', 'wielkopolskie', 'zach. pomorskie']
     @observable  searchSpecialization:string =''
     @observable  searchDistrict:string =''
@@ -44,7 +44,10 @@ import {observable} from 'mobx'
                     break;    
                 case 'gastrolog':
                     store.searchSpecialization='poradnia+gastroenterologiczna'
-                    break;                
+                    break;    
+                case 'dermatolog':
+                store.searchSpecialization='poradnia+dermatologiczna'
+                break;                
             
               default:
                   break;

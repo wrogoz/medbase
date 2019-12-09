@@ -35,7 +35,7 @@ const StyledHeader = styled.header`
 `
 const AppTitle = styled.h1`
     margin:0;
-    padding:36px 0 12px 16px;;
+    padding:36px 0 12px 16px;
     font-size:36px;
     font-style:normal;
     letter-spacing:0.5em;

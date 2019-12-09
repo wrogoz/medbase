@@ -44,7 +44,7 @@ const ResultsList = styled.ul`
     align-items:center;
     min-height:70vh;
     margin:0;
-    padding:0;
+    padding:10px;
     font-family: 'Montserrat', sans-serif;
 `
 
