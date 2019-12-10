@@ -59,6 +59,18 @@ const Circle = styled.div`
         font-size:64px;
         
     }
+        @media(min-width:530px){
+            height:120px;
+            width:120px;
+        }
+        @media(min-width:768px){
+            height:150px;
+            width:150px;
+            p{
+                font-size:90px;
+            }
+        }
+    
 `
 
 const CoreMessage = styled.p`
@@ -70,6 +82,12 @@ const CoreMessage = styled.p`
     letter-spacing:0.11em;
     color:#747474;
     margin: 40px 0 24px 0px;
+        @media(min-width:530px){
+            font-size:1.1em;
+        }
+        @media(min-width:530px){
+            font-size:1.4em;
+        }
     
 
 `

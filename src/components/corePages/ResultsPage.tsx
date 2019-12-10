@@ -55,6 +55,7 @@ const Result = styled.li`
     text-transform:uppercase;
     border-bottom:1px solid black;
     text-align:center;
+    
 
 `
 

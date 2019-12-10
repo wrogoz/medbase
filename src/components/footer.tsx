@@ -24,9 +24,18 @@ const StyledFooter = styled.footer`
     background-color:#f3f3f3;
     position:sticky;
     bottom:0;
+    margin-top: 3%;
     p{
         font-size:0.75em;
         color:#666262;
         letter-spacing:9px;
+    }
+        @media(min-width:768px){
+            padding:15px 0;
+            
+    }
+    @media (max-width:767px) and (min-height:770px){
+        position:absolute;
+        bottom:0;
     }
 `

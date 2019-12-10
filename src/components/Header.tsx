@@ -35,12 +35,19 @@ const StyledHeader = styled.header`
 `
 const AppTitle = styled.h1`
     margin:0;
-    padding:36px 0 12px 16px;
+    padding:36px 0 12px 10px;
     font-size:36px;
     font-style:normal;
     letter-spacing:0.5em;
     text-transform:uppercase;
     font-weight:400;
+    @media(min-width:530px){
+        font-size:50px;
+    }
+    @media(min-width:768px){
+        font-size:80px;
+        padding-top:50px;
+    }
     
 
 `
@@ -51,4 +58,13 @@ const SubTitle = styled.h2`
     color:#9e9a9a;
     font-weight:400;
     padding-bottom:20px;
+        @media(min-width:530px){
+            font-size:20px;
+        }
+        @media(min-width:768px){
+            font-size:26px;
+            letter-spacing: 0.3em;
+            margin-bottom: 2%;
+            padding-top: 3%;
+        }
 `

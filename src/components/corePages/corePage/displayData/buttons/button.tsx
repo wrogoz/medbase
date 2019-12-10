@@ -68,8 +68,14 @@ const StyledButton = styled.button`
     background-color:#000;
     color:#f2f2f2;
     letter-spacing:-3%;
-    font-size:14px;
+    font-size:13px;
     text-transform:uppercase
+    @media(min-width:768px){
+        height: 60px;
+        width: 200px;
+        font-size: 18px;
+        letter-spacing:1px;
+    }
     
 `
 

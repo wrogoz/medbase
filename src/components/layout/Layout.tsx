@@ -7,11 +7,11 @@ import ChooseSpecialistPage from './../corePages/ChooseSpecialistPage';
 import ChooseDistrictPage from '../corePages/ChooseDistrictPage';
 import CitySearchPage from '../corePages/CitySearchPage';
 import ResultsPage from '../corePages/ResultsPage';
-
+import styled from 'styled-components';
 export default class Layout extends React.Component<{},{}>{
     render(){
         return(
-            <div>
+            <Container>
                 
                     
                     <Header
@@ -27,9 +27,16 @@ export default class Layout extends React.Component<{},{}>{
                     
                     <Footer/>
                 
-            </div>
+            </Container>
         )
     }
 }
 
+
+const Container = styled.div`
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    
+`
 
