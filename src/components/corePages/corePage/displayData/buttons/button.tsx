@@ -71,8 +71,8 @@ const StyledButton = styled.button`
     font-size:13px;
     text-transform:uppercase
     @media(min-width:768px){
-        height: 60px;
-        width: 200px;
+        height: 50px;
+        width: 180px;
         font-size: 18px;
         letter-spacing:1px;
     }

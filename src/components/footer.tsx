@@ -17,7 +17,7 @@ export default class Footer extends React.Component<{},{}>{
 
 const StyledFooter = styled.footer`
     width:100%;
-    height:62px;
+    height:30px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -32,10 +32,7 @@ const StyledFooter = styled.footer`
     }
         @media(min-width:768px){
             padding:15px 0;
-            
+           
     }
-    @media (max-width:767px) and (min-height:770px){
-        position:absolute;
-        bottom:0;
-    }
+    
 `

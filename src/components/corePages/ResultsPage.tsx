@@ -43,7 +43,7 @@ const ResultsList = styled.ul`
     flex-direction:column;
     align-items:center;
     min-height:70vh;
-    margin:0;
+   
     padding:10px;
     font-family: 'Montserrat', sans-serif;
 `
@@ -55,6 +55,10 @@ const Result = styled.li`
     text-transform:uppercase;
     border-bottom:1px solid black;
     text-align:center;
+    margin:0;
+    min-width:70%;
+    max-width:70%;
+
     
 
 `

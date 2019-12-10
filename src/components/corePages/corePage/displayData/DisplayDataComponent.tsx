@@ -76,7 +76,14 @@ const CoreList = styled.ul`
     list-style:none;
     @media(min-width:768px){
         margin-top:2%;
+        overflow: hidden;
+        width:80%;
     }
+    @media(min-width:1050px){
+        width: 70%;
+    }
+    
+
 `
 
 const CoreListItem = styled.li`
@@ -86,6 +93,9 @@ const CoreListItem = styled.li`
 
         @media(min-width:530px){
             width:30%;
+        }
+        @media(min-width:1050px){
+            width: 25%;
         }
 `
 const CitySearchBox = styled.div`

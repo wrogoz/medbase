@@ -48,6 +48,10 @@ const AppTitle = styled.h1`
         font-size:80px;
         padding-top:50px;
     }
+    @media(min-width:1050px){
+        font-size: 134px;
+        padding-top: 2px;
+    }
     
 
 `
@@ -66,5 +70,8 @@ const SubTitle = styled.h2`
             letter-spacing: 0.3em;
             margin-bottom: 2%;
             padding-top: 3%;
+        }
+        @media(min-width:1050px){
+            padding-top:0;
         }
 `
