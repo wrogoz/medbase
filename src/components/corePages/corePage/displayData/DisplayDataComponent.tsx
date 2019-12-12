@@ -111,8 +111,13 @@ const CitySearchBox = styled.div`
     
         @media(min-width:1050px){
             padding-top:3%;
-            background-position: 53% -15%
+            background-position: 53% 10%
             min-height:auto;
+        }
+        @media(min-height:1300px){
+            
+            background-position: 53% 10%
+            
         }
 
     

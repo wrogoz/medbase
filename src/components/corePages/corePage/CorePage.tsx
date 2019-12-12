@@ -98,6 +98,10 @@ const CoreMessage = styled.p`
         @media(min-width:530px){
             font-size:1.4em;
         }
+        @media(min-width:1050px){
+            margin-bottom:0;
+            
+        }
     
 
 `
