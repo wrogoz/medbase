@@ -51,7 +51,7 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
                             <Button
                             followTo={this.props.followTo}
                             buttonTxt="Wynik wyszukiwania" />
-                           
+                            
                         </CitySearchBox>
         }
         
@@ -103,10 +103,10 @@ const CitySearchBox = styled.div`
     flex-direction:column;
     align-items:center;
     padding-top:10%;
-    min-height:46vh;
+    padding-bottom:5%;
     background-image:url("${search}");
     background-size: 48%;
-    background-position: 53% 0%
+    background-position: 53% 0%;
     background-repeat:no-repeat;
     
         @media(min-width:1050px){

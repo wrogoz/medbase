@@ -11,6 +11,7 @@ export default class ChooseDistrictPage extends React.Component<{},{}>{
                 pageNumber="3"
                 chooseText="miasto"
                 followTo="/results"
+                linkTo="/district"
             />
         )
     }

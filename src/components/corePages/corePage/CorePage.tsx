@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import DisplayData from './displayData/DisplayDataComponent'
-
+import NavButton from '../../../components/corePages/corePage/displayData/buttons/navButton';
 import {observer} from 'mobx-react';
 
 interface Core{
@@ -9,6 +9,7 @@ interface Core{
     pageNumber:string
     listType?:string[]
     followTo:string
+    linkTo?:string | null
     
 }
 
@@ -20,11 +21,13 @@ export default class CorePage extends React.Component <Core,{}>{
      
         return(
             <Core>
+                
                 <Circle>
                     <p>{this.props.pageNumber}</p>
                 </Circle>
 
                 <CoreMessage>
+               
                     Wybierz {this.props.chooseText}
                 </CoreMessage>
 
@@ -32,6 +35,9 @@ export default class CorePage extends React.Component <Core,{}>{
                     listType={this.props.listType}
                     followTo={this.props.followTo} 
                 />
+                 <NavButton
+                    linkTo={this.props.linkTo}
+                 />
                 
             </Core>
             
@@ -44,6 +50,7 @@ const Core = styled.main`
     flex-direction:column;
     align-items:center;
     font-family: 'Montserrat', sans-serif;
+    
 
 `
 const Circle = styled.div`
