@@ -51,6 +51,7 @@ const Core = styled.main`
     flex-direction:column;
     align-items:center;
     font-family: 'Montserrat', sans-serif;
+    padding:0;
     
 
 `
@@ -92,9 +93,8 @@ const CoreMessage = styled.p`
     letter-spacing:0.11em;
     color:#747474;
     margin: 40px 0 24px 0px;
-        @media(min-width:530px){
-            font-size:1.1em;
-        }
+    
+        
         @media(min-width:530px){
             font-size:1.4em;
         }

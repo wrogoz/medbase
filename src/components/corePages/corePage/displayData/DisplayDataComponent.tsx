@@ -90,7 +90,7 @@ const CoreListItem = styled.li`
     display:flex;
     justify-content:center;
     width:35%;
-
+    min-width:120px;
         @media(min-width:530px){
             width:30%;
         }
@@ -111,7 +111,7 @@ const CitySearchBox = styled.div`
     
         @media(min-width:1050px){
             padding-top:3%;
-            background-position: 53% -55%
+            background-position: 53% -15%
             min-height:auto;
         }
 
@@ -132,7 +132,7 @@ const CitySearchBox = styled.div`
                     font-size:30px;
             }
             @media(min-width:1050px){
-                margin-bottom:0;
+                
                 
             }
         }

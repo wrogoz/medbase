@@ -28,12 +28,14 @@ const StyledHeader = styled.header`
     display:flex;
     flex-direction:column;
     align-items:center;
+    flex-wrap:wrap;
     font-family: 'Montserrat', sans-serif;
     position:sticky;
     top:1px;
     background-color:#fff;
 `
 const AppTitle = styled.h1`
+
     margin:0;
     padding:36px 0 12px 10px;
     font-size:36px;
@@ -41,6 +43,9 @@ const AppTitle = styled.h1`
     letter-spacing:0.5em;
     text-transform:uppercase;
     font-weight:400;
+    @media(max-width:300px){
+        font-size:22px;
+    }
     @media(min-width:530px){
         font-size:50px;
     }
@@ -62,6 +67,10 @@ const SubTitle = styled.h2`
     color:#9e9a9a;
     font-weight:400;
     padding-bottom:20px;
+
+    @media(max-width:300px){
+        font-size:12px;
+    }
         @media(min-width:530px){
             font-size:20px;
         }

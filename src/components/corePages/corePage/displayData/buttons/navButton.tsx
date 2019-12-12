@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import arrowBack from '../../../../../img/arrowBack.svg'
+// import arrowBack from '../../../../../img/arrowBack.svg'
 import {Link} from 'react-router-dom';
 
     interface NavButtonProps{
@@ -41,14 +41,26 @@ transform: rotate(90deg);
 font-size:11px;
     &:hover{
         font-weight:500;
+        
+    };
+    @media(min-width:768px){
+        left:-48%;
+        font-size:13px;
+        letter-spacing:2px;
     }
-  
+    @media(min-width:1050px){
+        left:-49%;
+        font-size:14px;
+        
+        
+    }
 
 
 `
 const StyledLink = styled(Link)`
-display:flex;
-text-decoration:none;  
-color:#000;
-text-transform:uppercase;
+    display:flex;
+    text-decoration:none;  
+    color:#000;
+    text-transform:uppercase;
+    
 `
