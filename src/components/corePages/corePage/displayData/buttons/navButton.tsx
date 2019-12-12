@@ -34,9 +34,9 @@ border-bottom:none;
 
 background:none;
 padding:0px 12px;
-position:absolute;
-left: -6%;
-top: 28%;
+position:relative;
+left: -46%;
+top: 88px;
 transform: rotate(90deg);
 font-size:11px;
     &:hover{

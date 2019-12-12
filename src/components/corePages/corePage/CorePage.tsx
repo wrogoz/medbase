@@ -21,7 +21,9 @@ export default class CorePage extends React.Component <Core,{}>{
      
         return(
             <Core>
-                
+                <NavButton
+                    linkTo={this.props.linkTo}
+                 />
                 <Circle>
                     <p>{this.props.pageNumber}</p>
                 </Circle>
@@ -31,9 +33,7 @@ export default class CorePage extends React.Component <Core,{}>{
                     Wybierz {this.props.chooseText}
                    
                 </CoreMessage>
-                <NavButton
-                    linkTo={this.props.linkTo}
-                 />
+                
                 <DisplayData 
                     listType={this.props.listType}
                     followTo={this.props.followTo} 
@@ -63,7 +63,7 @@ const Circle = styled.div`
     border:1px solid #747474;
     border-radius:50%;
     margin-top:20px;
-    position:relative;
+   
     p{
         font-size:64px;
         
