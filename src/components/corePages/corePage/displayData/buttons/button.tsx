@@ -70,12 +70,17 @@ const StyledButton = styled.button`
     letter-spacing:-3%;
     font-size:13px;
     text-transform:uppercase
-    @media(min-width:768px){
-        height: 50px;
-        width: 180px;
-        font-size: 18px;
-        letter-spacing:1px;
-    }
+
+        @media(min-width:768px){
+            height: 50px;
+            width: 180px;
+            font-size: 18px;
+            letter-spacing:1px;
+        }
+        @media(min-width:1050px){
+            margin-top:15%;
+            
+        }
     
 `
 
