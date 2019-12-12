@@ -36,8 +36,7 @@ const StyledFooter = styled.footer`
     }
         @media(min-width:1050px){
             margin-top:auto;
-            position:absolute;
-            bottom:0;
+            
         }
     
 `
