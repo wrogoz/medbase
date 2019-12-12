@@ -31,12 +31,12 @@ export default class Results extends React.Component<{},{}>{
             )
         })
         
-           const displayError=<p>Błąd. Sprawdź sieć.</p>
+           const displayLoading=<p>Loading...</p>
         
 
         return(
             <ResultsList>
-               {store.dataApi.length<=1?displayError:displayResults}
+               {store.dataApi.length<=1?displayLoading:displayResults}
             </ResultsList>
         )
     }

@@ -29,10 +29,15 @@ const ArrowButton = styled.button`
 
 outline:none;
 border:1px solid black;
-border-radius:7px;
+border-radius:7px 7px 0 0;
+border-bottom:none;
+
 background:none;
 padding:0px 12px;
-margin-bottom:4%;
+position:absolute;
+left: -6%;
+top: 28%;
+transform: rotate(90deg);
 font-size:11px;
     &:hover{
         font-weight:500;

@@ -29,15 +29,16 @@ export default class CorePage extends React.Component <Core,{}>{
                 <CoreMessage>
                
                     Wybierz {this.props.chooseText}
+                   
                 </CoreMessage>
-
+                <NavButton
+                    linkTo={this.props.linkTo}
+                 />
                 <DisplayData 
                     listType={this.props.listType}
                     followTo={this.props.followTo} 
                 />
-                 <NavButton
-                    linkTo={this.props.linkTo}
-                 />
+                 
                 
             </Core>
             
@@ -62,6 +63,7 @@ const Circle = styled.div`
     border:1px solid #747474;
     border-radius:50%;
     margin-top:20px;
+    position:relative;
     p{
         font-size:64px;
         
