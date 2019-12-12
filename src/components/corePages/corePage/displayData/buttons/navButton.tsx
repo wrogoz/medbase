@@ -11,7 +11,13 @@ export default class NavButton extends React.Component <NavButtonProps,{}>{
 
         
         return(<>
-            {this.props.linkTo?<Arrow to={this.props.linkTo}></Arrow>:null}
+            {this.props.linkTo?<ArrowButton>
+                <StyledLink to={this.props.linkTo}>
+                    {/* <img src={arrowBack} alt="arrow back"></img> */}
+                    <p>Powrót</p>
+                    </StyledLink>
+
+                </ArrowButton>:null}
                 
             
             </>
@@ -19,17 +25,25 @@ export default class NavButton extends React.Component <NavButtonProps,{}>{
     }
 }
 
-const Arrow = styled(Link)`
-    height:35px;
-    width:35px; 
-    background-image:url("${arrowBack}");
-    background-repeat:no-repeat;
-    border:1px solid black;
-    border-radius:7px;
-    background-size:20px 20px;
-    background-position:center center;
-    margin-bottom:4%;
-    
+const ArrowButton = styled.button`
+
+outline:none;
+border:1px solid black;
+border-radius:7px;
+background:none;
+padding:0px 12px;
+margin-bottom:4%;
+font-size:11px;
+    &:hover{
+        font-weight:500;
+    }
+  
 
 
+`
+const StyledLink = styled(Link)`
+display:flex;
+text-decoration:none;  
+color:#000;
+text-transform:uppercase;
 `

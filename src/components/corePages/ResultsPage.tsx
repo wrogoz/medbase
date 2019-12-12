@@ -4,12 +4,13 @@ import {inject, observer} from 'mobx-react';
 import store from '../../store/store';
 
 
+
 @inject('store')
 @observer
 export default class Results extends React.Component<{},{}>{
 
     render(){
-
+        
         const displayResults = store.dataApi.map((el,i)=>{
             return (
                 
@@ -29,10 +30,13 @@ export default class Results extends React.Component<{},{}>{
                 </Result>
             )
         })
+        
+           const displayError=<p>Błąd. Sprawdź sieć.</p>
+        
 
         return(
             <ResultsList>
-               {displayResults}
+               {store.dataApi.length<=1?displayError:displayResults}
             </ResultsList>
         )
     }
