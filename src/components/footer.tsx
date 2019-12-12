@@ -32,7 +32,10 @@ const StyledFooter = styled.footer`
     }
         @media(min-width:768px){
             padding:15px 0;
-           
+            margin-top:20%;
     }
+        @media(min-width:1050px){
+            margin-top:0;
+        }
     
 `

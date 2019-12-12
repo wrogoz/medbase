@@ -64,10 +64,11 @@ const Circle = styled.div`
             width:120px;
         }
         @media(min-width:768px){
-            height:150px;
-            width:150px;
+            height:115px;
+            width:115px;
+            margin-top:5px;
             p{
-                font-size:90px;
+                font-size:60px;
             }
         }
     

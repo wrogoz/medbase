@@ -49,7 +49,7 @@ const AppTitle = styled.h1`
         padding-top:50px;
     }
     @media(min-width:1050px){
-        font-size: 134px;
+        font-size: 90px;
         padding-top: 2px;
     }
     
