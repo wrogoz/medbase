@@ -34,7 +34,10 @@ export default class Layout extends React.Component<{},{}>{
 
 
 const Container = styled.div`
-    height:100vh;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    
    
     
 `

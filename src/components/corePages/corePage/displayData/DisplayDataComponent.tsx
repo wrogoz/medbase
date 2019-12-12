@@ -68,7 +68,7 @@ const CoreList = styled.ul`
     overflow-y:scroll;
     width:100%;
     margin:0;
-    margin-bottom:2%;
+    margin-bottom:5%;
     padding:0;
     display:flex;
     justify-content:space-evenly;
@@ -108,7 +108,12 @@ const CitySearchBox = styled.div`
     background-size: 48%;
     background-position: 53% 0%
     background-repeat:no-repeat;
-   
+    
+        @media(min-width:1050px){
+            padding-top:3%;
+            background-position: 53% -55%
+            min-height:auto;
+        }
 
     
         input{
@@ -125,6 +130,10 @@ const CitySearchBox = styled.div`
             font-size:22px;
                 @media(min-width:530px){
                     font-size:30px;
+            }
+            @media(min-width:1050px){
+                margin-bottom:0;
+                
             }
         }
 `

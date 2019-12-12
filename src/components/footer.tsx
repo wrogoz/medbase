@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
     background-color:#f3f3f3;
     position:sticky;
     bottom:0;
-    margin-top: 3%;
+    margin-top:auto;
     p{
         font-size:0.75em;
         color:#666262;
@@ -32,10 +32,12 @@ const StyledFooter = styled.footer`
     }
         @media(min-width:768px){
             padding:15px 0;
-            margin-top:20%;
+            
     }
         @media(min-width:1050px){
-            margin-top:0;
+            margin-top:auto;
+            position:absolute;
+            bottom:0;
         }
     
 `
