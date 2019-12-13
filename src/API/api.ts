@@ -1,8 +1,18 @@
  import axios from 'axios';
  import store from '../store/store'
  
- 
- const getCityDataFromApi = async (storeName:any)=>{
+ interface StoreProps{
+    specialization:string[]
+    district:string[]
+    searchSpecialization:string
+    searchDistrict:string
+    searchCity:string
+    dataApi:{date:string,place:string,address:string,phone:string}[]
+    specializationNameToOfficialName(specialization:string):void
+    districtNameToDistrictCode(districtName:string):void
+}
+
+ const getCityDataFromApi = (storeName:StoreProps)=>{
     axios.get(`https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&locality=${store.searchCity}&case=1&benefit=${store.searchSpecialization}&format=json`)
                 .then(function (res) {
                     
@@ -25,12 +35,12 @@
                     }
                 })
                 .catch(function (error) {
-                    // handle error
+                    
                     console.log(error);
                 })
 }
 
-const getDistrictDataFromApi =  (storeName:any)=>{
+const getDistrictDataFromApi =  (storeName:StoreProps)=>{
     axios.get(`https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&case=1&benefit=${store.searchSpecialization}&format=json`)
                 .then(function (res) {
                     
@@ -43,7 +53,7 @@ const getDistrictDataFromApi =  (storeName:any)=>{
                                 }
                     })
                     storeName.dataApi=data;
-                  console.log(data)
+                 
                     
       
                 })
@@ -54,3 +64,4 @@ const getDistrictDataFromApi =  (storeName:any)=>{
 }
 
 export { getCityDataFromApi, getDistrictDataFromApi}
+

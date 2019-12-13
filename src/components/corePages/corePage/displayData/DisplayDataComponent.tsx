@@ -1,31 +1,37 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import {inject, observer} from 'mobx-react'
+import {inject, observer} from 'mobx-react';
 import Button from './buttons/Button';
 import store from '../../../../store/store';
 import search from '../../../../img/search.svg';
+import {getCityDataFromApi, getDistrictDataFromApi} from '../../../../API/api';
+import createHistory from 'history/createHashHistory';
 interface DisplayDataProps{
     listType?:string[] 
     followTo:string
-   
-   
-    
 }
 @inject("store")
 @observer
 export default class DisplayData extends React.Component<DisplayDataProps,{}>{
-    
-    observeUserCitySearch = (e:any)=>{
-        store.searchCity = e.target.value
+    private router:any
+    observeUserCitySearch = (e:React.FormEvent<HTMLInputElement>)=>{
+        store.searchCity = e.currentTarget.value
     }
-    pressEnter = (e:any) =>{
+    pressEnter = (e:React.KeyboardEvent<HTMLInputElement>) =>{
         if(e.key ==='Enter'){
+            createHistory();
+            if(store.searchCity.length>0 ){
+                getCityDataFromApi(store)
+            }        
+             else{
+                 getDistrictDataFromApi(store);
+             }
             window.location.href="/results"
         }
     }
     
     render(){
-        let displayData:JSX.Element | JSX.Element[] | any;
+        let displayData:JSX.Element | JSX.Element[] ;
         if(this.props.listType){
             displayData = this.props.listType.map((el,i)=>{
                 const id = i * (Math.floor(Math.random()*10000))

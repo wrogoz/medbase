@@ -21,11 +21,11 @@ export default class Button extends React.Component<ButtonProps,{}>{
         this.refButton = React.createRef();
     }
 
-    saveValueToStore= async ()=>{
+    saveValueToStore= () =>{
 //  -----------------SAVE SPECIALIZATION TO STORE
         if(this.props.followTo === '/district'){
             store.specializationNameToOfficialName(this.refButton.current.textContent)
-     
+    
         }
 //  -----------------SAVE DISTRICT TO STORE        
         else if(this.props.followTo === '/citySearch'){

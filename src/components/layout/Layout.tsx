@@ -8,8 +8,11 @@ import ChooseDistrictPage from '../corePages/ChooseDistrictPage';
 import CitySearchPage from '../corePages/CitySearchPage';
 import ResultsPage from '../corePages/ResultsPage';
 import styled from 'styled-components';
+
+
 export default class Layout extends React.Component<{},{}>{
     render(){
+        
         return(
             <Container>
                     <Header
