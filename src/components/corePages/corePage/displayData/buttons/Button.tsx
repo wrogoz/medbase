@@ -24,17 +24,14 @@ export default class Button extends React.Component<ButtonProps,{}>{
     saveValueToStore= async ()=>{
 //  -----------------SAVE SPECIALIZATION TO STORE
         if(this.props.followTo === '/district'){
-         store.specializationNameToOfficialName(this.refButton.current.textContent)
-          
-           console.log(store.searchSpecialization)
+            store.specializationNameToOfficialName(this.refButton.current.textContent)
+     
         }
 //  -----------------SAVE DISTRICT TO STORE        
-         else if(this.props.followTo === '/citySearch'){
+        else if(this.props.followTo === '/citySearch'){
 
-           store.districtNameToDistrictCode(this.refButton.current.textContent)
+            store.districtNameToDistrictCode(this.refButton.current.textContent)
 
-          
-           console.log(store.searchDistrict)
 //  -----------------SAVE CITY NAME TO STORE (OPTIONAL)
         }else if(this.props.followTo=== '/results'){
            

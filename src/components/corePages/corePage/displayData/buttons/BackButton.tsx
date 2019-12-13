@@ -1,31 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-// import arrowBack from '../../../../../img/arrowBack.svg'
 import {Link} from 'react-router-dom';
 
-    interface NavButtonProps{
+    interface BackButtonProps{
         linkTo?:string | null
     }
-export default class NavButton extends React.Component <NavButtonProps,{}>{
+export default class GoBackButton extends React.Component <BackButtonProps,{}>{
     render(){
 
         
         return(<>
-            {this.props.linkTo?<ArrowButton>
+            {this.props.linkTo?<BackButton>
                 <StyledLink to={this.props.linkTo}>
-                    {/* <img src={arrowBack} alt="arrow back"></img> */}
+                 
                     <p>Powrót</p>
                     </StyledLink>
 
-                </ArrowButton>:null}
-                
-            
+                </BackButton>:null}
             </>
         )
     }
 }
 
-const ArrowButton = styled.button`
+const BackButton = styled.button`
 
 outline:none;
 border:1px solid black;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import DisplayData from './displayData/DisplayDataComponent'
-import NavButton from '../../../components/corePages/corePage/displayData/buttons/navButton';
+import GoBackButton from './displayData/buttons/BackButton';
 import {observer} from 'mobx-react';
 
 interface Core{
@@ -21,25 +21,19 @@ export default class CorePage extends React.Component <Core,{}>{
      
         return(
             <Core>
-                <NavButton
+                <GoBackButton
                     linkTo={this.props.linkTo}
                  />
                 <Circle>
                     <p>{this.props.pageNumber}</p>
                 </Circle>
-
                 <CoreMessage>
-               
-                    Wybierz {this.props.chooseText}
-                   
+                    Wybierz {this.props.chooseText}  
                 </CoreMessage>
-                
                 <DisplayData 
                     listType={this.props.listType}
                     followTo={this.props.followTo} 
                 />
-                 
-                
             </Core>
             
         )
@@ -53,7 +47,6 @@ const Core = styled.main`
     font-family: 'Montserrat', sans-serif;
     padding:0;
     
-
 `
 const Circle = styled.div`
     width:99px;
@@ -102,8 +95,6 @@ const CoreMessage = styled.p`
             margin-bottom:0;
             
         }
-    
-
 `
 
 

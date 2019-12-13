@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import {inject, observer} from 'mobx-react'
-import Button from './buttons/button';
+import Button from './buttons/Button';
 import store from '../../../../store/store';
 import search from '../../../../img/search.svg';
 interface DisplayDataProps{
@@ -18,7 +18,11 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
     observeUserCitySearch = (e:any)=>{
         store.searchCity = e.target.value
     }
-    
+    pressEnter = (e:any) =>{
+        if(e.key ==='Enter'){
+            window.location.href="/results"
+        }
+    }
     
     render(){
         let displayData:JSX.Element | JSX.Element[] | any;
@@ -47,6 +51,7 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
                         <CitySearchBox>
                             <input 
                                 onChange={this.observeUserCitySearch}
+                                onKeyPress={this.pressEnter}
                             />
                             <Button
                             followTo={this.props.followTo}

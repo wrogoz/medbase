@@ -112,7 +112,8 @@ import {observable} from 'mobx'
                 case 'zach. pomorskie':
                     store.searchDistrict = '16'
                     break;               
-                default:
+                default: 
+                    store.searchDistrict='12'
                     break;
             }
         }

@@ -9,7 +9,7 @@ export default class ChooseDistrictPage extends React.Component<{},{}>{
         return(
             <CorePage
                 pageNumber="3"
-                chooseText="miasto"
+                chooseText="miasto (opcjonalnie)"
                 followTo="/results"
                 linkTo="/district"
             />

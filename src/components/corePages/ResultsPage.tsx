@@ -31,7 +31,11 @@ export default class Results extends React.Component<{},{}>{
             )
         })
         
-           const displayLoading=<p>Loading...</p>
+           const displayLoading=<>
+           <p>Trwa pobieranie danych</p>
+           <p>Proszę czekać... w końcu to NFZ :)</p>
+           
+           </>
         
 
         return(
