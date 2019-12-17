@@ -35,7 +35,6 @@ const StyledHeader = styled.header`
     background-color:#fff;
 `
 const AppTitle = styled.h1`
-
     margin:0;
     padding:36px 0 12px 10px;
     font-size:36px;
@@ -57,8 +56,6 @@ const AppTitle = styled.h1`
         font-size: 90px;
         padding-top: 2px;
     }
-    
-
 `
 const SubTitle = styled.h2`
     font-size:16px;

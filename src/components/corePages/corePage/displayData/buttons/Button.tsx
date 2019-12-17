@@ -8,8 +8,8 @@ import {getCityDataFromApi, getDistrictDataFromApi} from '../../../../../API/api
 interface ButtonProps{
     buttonTxt:string 
     followTo:string
-    
 }
+
 @inject("store")
 @observer
 export default class Button extends React.Component<ButtonProps,{}>{

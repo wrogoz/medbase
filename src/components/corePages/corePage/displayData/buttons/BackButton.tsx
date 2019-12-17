@@ -60,17 +60,11 @@ font-size:11px;
         left:-35px;
         top: 225px;
         font-size:14px;
-        
-        
     }
-
-
 `
 const StyledLink = styled(Link)`
     display:flex;
     text-decoration:none;  
     color:#000;
     text-transform:uppercase;
-    
-    
 `

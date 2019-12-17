@@ -65,7 +65,6 @@ const ResultsList = styled.ul`
     flex-direction:column;
     align-items:center;
     min-height:70vh;
-   
     padding:10px;
    
 `
@@ -143,17 +142,12 @@ font-size:11px;
         left: -116px;
         top: 430px;
         font-size:14px;
-        
-        
     }
-
-
 `
 const StyledLink = styled(Link)`
     display:flex;
     text-decoration:none;  
     color:#000;
     text-transform:uppercase;
-    
     
 `

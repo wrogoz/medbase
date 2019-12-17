@@ -32,11 +32,9 @@ const StyledFooter = styled.footer`
     }
         @media(min-width:768px){
             padding:15px 0;
-            
     }
         @media(min-width:1050px){
             margin-top:auto;
-            
         }
     
 `

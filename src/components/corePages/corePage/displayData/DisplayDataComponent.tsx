@@ -13,6 +13,7 @@ interface DisplayDataProps{
     listType?:string[] 
     followTo:string
 }
+
 @inject("store")
 @observer
 export default class DisplayData extends React.Component<DisplayDataProps,{}>{
@@ -51,6 +52,7 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
           ))
 
         let displayData:JSX.Element | JSX.Element[] ;
+        
         if(this.props.listType){
             const sortedArray = this.props.listType.slice().sort();
 
