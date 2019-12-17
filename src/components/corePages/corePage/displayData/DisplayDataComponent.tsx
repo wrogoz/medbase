@@ -5,7 +5,10 @@ import Button from './buttons/Button';
 import store from '../../../../store/store';
 import search from '../../../../img/search.svg';
 import {getCityDataFromApi, getDistrictDataFromApi} from '../../../../API/api';
-import createHistory from 'history/createHashHistory';
+import {withRouter} from 'react-router-dom';
+
+
+
 interface DisplayDataProps{
     listType?:string[] 
     followTo:string
@@ -19,18 +22,34 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
     }
     pressEnter = (e:React.KeyboardEvent<HTMLInputElement>) =>{
         if(e.key ==='Enter'){
-            createHistory();
+           
             if(store.searchCity.length>0 ){
                 getCityDataFromApi(store)
             }        
              else{
                  getDistrictDataFromApi(store);
              }
-            window.location.href="/results"
+           
         }
     }
     
     render(){
+
+        const Input = withRouter(({ history }) => (
+            <input
+              type='text'
+              onChange={this.observeUserCitySearch}
+              onKeyPress={(e) => {
+                    if(e.key==="Enter"){
+                        this.pressEnter(e)
+                        history.push('/results')
+                    }
+               
+                }}
+            />
+              
+          ))
+
         let displayData:JSX.Element | JSX.Element[] ;
         if(this.props.listType){
             displayData = this.props.listType.map((el,i)=>{
@@ -52,12 +71,10 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
             </CoreList>
 
         }else{
-
+            
             displayData=
                         <CitySearchBox>
-                            <input 
-                                onChange={this.observeUserCitySearch}
-                                onKeyPress={this.pressEnter}
+                            <Input
                             />
                             <Button
                             followTo={this.props.followTo}

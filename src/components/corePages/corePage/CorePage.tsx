@@ -17,8 +17,6 @@ interface Core{
 export default class CorePage extends React.Component <Core,{}>{
     render(){
 
-
-     
         return(
             <Core>
                 <GoBackButton
