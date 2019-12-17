@@ -10,7 +10,8 @@ interface Core{
     listType?:string[]
     followTo:string
     linkTo?:string | null
-    
+    text?:string
+   
 }
 
 @observer
@@ -21,6 +22,7 @@ export default class CorePage extends React.Component <Core,{}>{
             <Core>
                 <GoBackButton
                     linkTo={this.props.linkTo}
+                    text={this.props.text}
                  />
                 <Circle>
                     <p>{this.props.pageNumber}</p>
@@ -31,6 +33,7 @@ export default class CorePage extends React.Component <Core,{}>{
                 <DisplayData 
                     listType={this.props.listType}
                     followTo={this.props.followTo} 
+                    
                 />
             </Core>
             

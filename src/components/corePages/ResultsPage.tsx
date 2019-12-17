@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import {inject, observer} from 'mobx-react';
 import store from '../../store/store';
-
-
+import GoBackButton from '../corePages/corePage/displayData/buttons/BackButton';
+import {Link} from 'react-router-dom';
 
 @inject('store')
 @observer
@@ -16,7 +16,7 @@ export default class Results extends React.Component<{},{}>{
                 
                 <Result key={`result-${i}`}>
                     <Date>
-                        {el.date}
+                      Termin: {el.date}
                     </Date>
                     <Place>
                         {el.place}
@@ -28,6 +28,7 @@ export default class Results extends React.Component<{},{}>{
                         {el.phone}
                     </Phone>
                 </Result>
+               
             )
         })
         
@@ -39,9 +40,22 @@ export default class Results extends React.Component<{},{}>{
         
 
         return(
+            <>
+                <GoBackButton
+                    linkTo={'/citySearch'}
+                    text="powrót"
+                 />
+
+                 <RestartButton>
+                    <StyledLink to="/">
+                    <p>Ponowne wyszukiwanie</p>
+                    </StyledLink>
+                </RestartButton> 
+                     
             <ResultsList>
                {store.dataApi.length<=1?displayLoading:displayResults}
             </ResultsList>
+            </>
         )
     }
 }
@@ -67,8 +81,6 @@ const Result = styled.li`
     min-width:70%;
     max-width:70%;
 
-    
-
 `
 
 const Date = styled.p`
@@ -91,4 +103,57 @@ const Adress = styled.p`
 const Phone = styled.p`
     font-size:12px;
     letter-spacing:5px;
+`
+
+const RestartButton = styled.button`
+outline:none;
+border:1px solid black;
+border-radius:7px 7px 0 0;
+border-bottom:none;
+cursor:pointer;
+background:none;
+padding:0px 12px;
+position:absolute;
+left: -73px;
+top: 310px;
+transform: rotate(90deg);
+font-size:11px;
+
+    &:hover{
+        font-weight:500;
+        
+    };
+    @media(max-width:300px){
+        top:300px;
+        
+    }
+    @media(min-width:530px){
+        top: 370px;
+        left: -82px;
+        font-size: 13px;
+    
+    }
+    @media(min-width:768px){
+        left: -102px;
+    top: 460px;
+        font-size:13px;
+        letter-spacing:2px;
+    }
+    @media(min-width:1050px){
+        left:-110px;
+        top: 421px;
+        font-size:14px;
+        
+        
+    }
+
+
+`
+const StyledLink = styled(Link)`
+    display:flex;
+    text-decoration:none;  
+    color:#000;
+    text-transform:uppercase;
+    
+    
 `

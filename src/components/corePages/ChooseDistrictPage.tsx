@@ -13,6 +13,8 @@ export default class ChooseDistrictPage extends React.Component<{},{}>{
                 listType={store.district}
                 followTo="/citySearch"
                 linkTo="/"
+                text="powrót"
+            
             />
         )
     }

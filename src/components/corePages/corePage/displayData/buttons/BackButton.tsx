@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
     interface BackButtonProps{
         linkTo?:string | null
+        text?:string
     }
 export default class GoBackButton extends React.Component <BackButtonProps,{}>{
     render(){
@@ -13,7 +14,7 @@ export default class GoBackButton extends React.Component <BackButtonProps,{}>{
             {this.props.linkTo?<BackButton>
                 <StyledLink to={this.props.linkTo}>
                  
-                    <p>Powrót</p>
+                    <p>{this.props.text}</p>
                     </StyledLink>
 
                 </BackButton>:null}
