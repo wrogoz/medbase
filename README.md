@@ -20,4 +20,4 @@ First:
 npm install
 
 Then:
-npm run dev
+npm start
