@@ -39,5 +39,6 @@ const Container = styled.div`
     min-width:300px;
     display:flex;
     flex-direction:column;
+    font-family: 'Montserrat', sans-serif;
 `
 

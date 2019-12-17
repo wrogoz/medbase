@@ -67,7 +67,7 @@ const ResultsList = styled.ul`
     min-height:70vh;
    
     padding:10px;
-    font-family: 'Montserrat', sans-serif;
+   
 `
 
 const Result = styled.li`
@@ -114,8 +114,8 @@ cursor:pointer;
 background:none;
 padding:0px 12px;
 position:absolute;
-left: -73px;
-top: 310px;
+left: -78px;
+top: 334px;
 transform: rotate(90deg);
 font-size:11px;
 
@@ -128,20 +128,20 @@ font-size:11px;
         
     }
     @media(min-width:530px){
-        top: 370px;
-        left: -82px;
+        top: 388px;
+        left: -88px;
         font-size: 13px;
     
     }
     @media(min-width:768px){
-        left: -102px;
-    top: 460px;
+        left: -108px;
+        top: 490px;
         font-size:13px;
         letter-spacing:2px;
     }
     @media(min-width:1050px){
-        left:-110px;
-        top: 421px;
+        left: -116px;
+        top: 430px;
         font-size:14px;
         
         
