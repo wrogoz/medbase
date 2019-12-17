@@ -66,13 +66,13 @@ const StyledButton = styled.button`
     background-color:#000;
     color:#f2f2f2;
     letter-spacing:-3%;
-    font-size:13px;
+    font-size:12px;
     text-transform:uppercase
-
+    
         @media(min-width:768px){
             height: 50px;
             width: 180px;
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing:1px;
         }
         @media(min-width:1050px){
@@ -81,7 +81,6 @@ const StyledButton = styled.button`
         }
     
 `
-
 const StyledLink = styled(Link)`
     text-decoration:none;
     color:#fff;

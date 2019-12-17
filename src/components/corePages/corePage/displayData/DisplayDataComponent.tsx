@@ -52,8 +52,10 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
 
         let displayData:JSX.Element | JSX.Element[] ;
         if(this.props.listType){
-            displayData = this.props.listType.map((el,i)=>{
-                const id = i * (Math.floor(Math.random()*10000))
+            const sortedArray = this.props.listType.slice().sort();
+
+            displayData = sortedArray.map((el,i)=>{
+                const id = `${i}${el}`
                 return (
                     
                     <CoreListItem key={id}>
@@ -66,9 +68,9 @@ export default class DisplayData extends React.Component<DisplayDataProps,{}>{
                     </CoreListItem>
                 )
             })
-           displayData= <CoreList>
-                    {displayData}
-            </CoreList>
+            displayData =   <CoreList>
+                                {displayData}
+                            </CoreList>
 
         }else{
             
@@ -110,10 +112,7 @@ const CoreList = styled.ul`
     @media(min-width:1050px){
         width: 70%;
     }
-    
-
 `
-
 const CoreListItem = styled.li`
     display:flex;
     justify-content:center;
@@ -143,12 +142,9 @@ const CitySearchBox = styled.div`
             min-height:auto;
         }
         @media(min-height:1300px){
-            
             background-position: 53% 10%
-            
         }
 
-    
         input{
             padding:5px 0;
             margin-bottom: 15%;
@@ -163,10 +159,6 @@ const CitySearchBox = styled.div`
             font-size:22px;
                 @media(min-width:530px){
                     font-size:30px;
-            }
-            @media(min-width:1050px){
-                
-                
-            }
+                }
         }
 `
