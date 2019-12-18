@@ -5,9 +5,11 @@
 - Typescript
 - React
 - React Router
-- mobx
-- styled-components
-- axios
+- Mobx
+- Styled-components
+- Axios
+- Jest
+- Enzyme
 
 
 
