@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import DisplayData from "./displayData/DisplayDataComponent";
 import GoBackButton from "./displayData/buttons/BackButton";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
+import store from '../../../store/store'
 
 interface Core {
   chooseText: string;
@@ -13,6 +14,7 @@ interface Core {
   text?: string;
 }
 
+@inject("store")
 @observer
 export default class CorePage extends React.Component<Core, {}> {
   render() {

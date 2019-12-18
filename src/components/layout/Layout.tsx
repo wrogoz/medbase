@@ -1,5 +1,4 @@
 import React from "react";
-import "@material/layout-grid/dist/mdc.layout-grid.css";
 import Header from "./../Header";
 import Footer from "../Footer";
 import { Switch, Route } from "react-router-dom";
