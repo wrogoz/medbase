@@ -65,7 +65,8 @@ const StyledButton = styled.button`
   color: #f2f2f2;
   letter-spacing: -3%;
   font-size: 12px;
-  text-transform:uppercase @media(min-width:768px) {
+  text-transform:uppercase;
+   @media(min-width:768px) {
     height: 50px;
     width: 180px;
     font-size: 16px;
