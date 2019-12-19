@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DisplayData from "./displayData/DisplayDataComponent";
 import GoBackButton from "./displayData/buttons/BackButton";
 import { observer, inject } from "mobx-react";
-import store from '../../../store/store'
+
 
 interface Core {
   chooseText: string;
