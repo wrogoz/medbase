@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { inject, observer } from "mobx-react";
 import store from "../../store/store";
-import GoBackButton from "../corePages/corePage/displayData/buttons/BackButton";
+import BackwardButton from "./corePage/displayData/buttons/BackwardButton";
 import { Link } from "react-router-dom";
 
 @inject("store")
@@ -29,7 +29,7 @@ export default class Results extends React.Component<{}, {}> {
 
     return (
       <>
-        <GoBackButton linkTo={"/citySearch"} text="powrót" />
+        <BackwardButton linkTo={"/citySearch"} text="powrót" />
 
         <RestartButton>
           <StyledLink to="/">

@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface BackButtonProps {
+interface BackwardButtonProps {
   linkTo?: string | null;
   text?: string;
 }
-export default class GoBackButton extends React.Component<BackButtonProps, {}> {
+export default class BackwardButton extends React.Component<BackwardButtonProps, {}> {
   render() {
     return (
       <>

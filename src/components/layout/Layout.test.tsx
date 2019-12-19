@@ -8,7 +8,7 @@ import { Route } from "react-router-dom";
 configure({adapter:new Adapter()});
 
 export default describe('<Layout/>', () => {
-    it('should check is has header,footer',()=>{
+    it('should check is has header,footer and 4 routes',()=>{
         const wrapper=shallow(<Layout/>);
         expect(wrapper.find(Header)).toHaveLength(1);
         expect(wrapper.find(Footer)).toHaveLength(1) ;
