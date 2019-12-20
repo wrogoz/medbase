@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { inject, observer } from "mobx-react";
 import store from "../../store/store";
 import BackwardButton from "./corePage/displayData/buttons/BackwardButton";
@@ -44,7 +44,14 @@ export default class Results extends React.Component<{}, {}> {
     );
   }
 }
-
+const scaleContent = keyframes`
+  from{
+    transform:scale(0.1)
+  }
+  to{
+    transform:translateY(1)
+  }
+`;
 const ResultsList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -63,6 +70,10 @@ const Result = styled.li`
   margin: 0;
   min-width: 70%;
   max-width: 70%;
+  animation-name: ${scaleContent};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 `;
 
 const Date = styled.p`
@@ -100,7 +111,7 @@ const RestartButton = styled.button`
   top: 334px;
   transform: rotate(90deg);
   font-size: 11px;
-  z-index:2;
+  z-index: 2;
   &:hover {
     font-weight: 500;
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import store from "../../../../../store/store";
@@ -44,22 +44,15 @@ export default class Button extends React.Component<ButtonProps, {}> {
   };
   render() {
     return (
-      
-        <StyledLink to={this.props.followTo} ref={this.refButton}>
-         <StyledButton onClick={this.saveValueToStore}>{this.props.buttonTxt}</StyledButton> 
-        </StyledLink>
-      
+      <StyledLink to={this.props.followTo} ref={this.refButton}>
+        <StyledButton onClick={this.saveValueToStore}>
+          {this.props.buttonTxt}
+        </StyledButton>
+      </StyledLink>
     );
   }
 }
-const fadeIn = keyframes`
-  from{
-    opacity:0;
-  }
-  to{
-    opacity:1;
-  }
-`
+
 const StyledButton = styled.button`
   height: 36px;
   width: 135px;
@@ -67,27 +60,25 @@ const StyledButton = styled.button`
   outline: none;
   border: none;
   border-radius: 7px;
-  
+
   background-color: #000;
   color: #f2f2f2;
   letter-spacing: -3%;
   font-size: 12px;
-  text-transform:uppercase;
-  cursor:pointer;
-  animation-name:${fadeIn};
-  animation-duration:0.7s;
-  animation-iteration-count:1;
-  animation-fill-mode:forwards;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
 
-
-   @media(min-width:768px) {
+  @media (min-width: 768px) {
     height: 50px;
     width: 180px;
     font-size: 16px;
     letter-spacing: 1px;
   }
   @media (min-width: 1050px) {
-    
     width: 220px;
   }
 `;

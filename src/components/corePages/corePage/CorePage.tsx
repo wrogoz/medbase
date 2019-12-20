@@ -4,7 +4,6 @@ import DisplayData from "./displayData/DisplayData";
 import BackwardButton from "./displayData/buttons/BackwardButton";
 import { observer, inject } from "mobx-react";
 
-
 interface Core {
   chooseText: string;
   pageNumber: string;

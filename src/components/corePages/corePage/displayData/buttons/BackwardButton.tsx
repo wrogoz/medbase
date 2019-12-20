@@ -1,17 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { observer, inject } from "mobx-react";
+import store from "../../../../../store/store";
 interface BackwardButtonProps {
   linkTo?: string | null;
   text?: string;
 }
-export default class BackwardButton extends React.Component<BackwardButtonProps, {}> {
+@inject("store")
+@observer
+export default class BackwardButton extends React.Component<
+  BackwardButtonProps,
+  {}
+> {
+  resetResult = () => {
+    if (store.dataApi.length > 1) {
+      store.dataApi = [
+        {
+          date: "",
+          place: "",
+          address: "",
+          phone: ""
+        }
+      ];
+    }
+  };
   render() {
     return (
       <>
         {this.props.linkTo ? (
-          <BackButton>
+          <BackButton onClick={this.resetResult}>
             <StyledLink to={this.props.linkTo}>
               <p>{this.props.text}</p>
             </StyledLink>
@@ -35,7 +53,7 @@ const BackButton = styled.button`
   top: 180px;
   transform: rotate(90deg);
   font-size: 11px;
-  z-index:2;
+  z-index: 2;
 
   &:hover {
     font-weight: 500;
