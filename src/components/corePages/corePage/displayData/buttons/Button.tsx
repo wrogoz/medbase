@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import store from "../../../../../store/store";
@@ -44,28 +44,42 @@ export default class Button extends React.Component<ButtonProps, {}> {
   };
   render() {
     return (
-      <StyledButton onClick={this.saveValueToStore}>
+      
         <StyledLink to={this.props.followTo} ref={this.refButton}>
-          {this.props.buttonTxt}
+         <StyledButton onClick={this.saveValueToStore}>{this.props.buttonTxt}</StyledButton> 
         </StyledLink>
-      </StyledButton>
+      
     );
   }
 }
-
+const fadeIn = keyframes`
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+`
 const StyledButton = styled.button`
   height: 36px;
-  width: 142px;
+  width: 135px;
   min-width: 110px;
   outline: none;
   border: none;
   border-radius: 7px;
-  margin-top: 20%;
+  
   background-color: #000;
   color: #f2f2f2;
   letter-spacing: -3%;
   font-size: 12px;
   text-transform:uppercase;
+  cursor:pointer;
+  animation-name:${fadeIn};
+  animation-duration:0.7s;
+  animation-iteration-count:1;
+  animation-fill-mode:forwards;
+
+
    @media(min-width:768px) {
     height: 50px;
     width: 180px;
@@ -73,7 +87,8 @@ const StyledButton = styled.button`
     letter-spacing: 1px;
   }
   @media (min-width: 1050px) {
-    margin-top: 15%;
+    
+    width: 220px;
   }
 `;
 const StyledLink = styled(Link)`

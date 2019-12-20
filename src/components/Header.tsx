@@ -27,6 +27,7 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 1px;
   background-color: #fff;
+  z-index:1;
 `;
 const AppTitle = styled.h1`
   margin: 0;

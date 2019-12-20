@@ -100,7 +100,7 @@ const RestartButton = styled.button`
   top: 334px;
   transform: rotate(90deg);
   font-size: 11px;
-
+  z-index:2;
   &:hover {
     font-weight: 500;
   }

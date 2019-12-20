@@ -86,6 +86,7 @@ const CoreList = styled.ul`
   justify-content: space-evenly;
   flex-wrap: wrap;
   list-style: none;
+  z-index:0;
   @media (min-width: 768px) {
     margin-top: 2%;
     overflow: hidden;
@@ -100,11 +101,17 @@ const CoreListItem = styled.li`
   justify-content: center;
   width: 35%;
   min-width: 120px;
+  margin-top:25px;
   @media (min-width: 530px) {
     width: 30%;
   }
   @media (min-width: 1050px) {
-    width: 25%;
+    width: 28%;
+    margin-top:30px;
+  }
+  @media (min-width: 1400px) {
+    width: 22%;
+    margin-top:47px;
   }
 `;
 const CitySearchBox = styled.div`
@@ -129,7 +136,7 @@ const CitySearchBox = styled.div`
 
         input{
             padding:5px 0;
-            margin-bottom: 15%;
+            margin-bottom: 25%;
             margin-top: 1%;
             background:none;
             outline:none;

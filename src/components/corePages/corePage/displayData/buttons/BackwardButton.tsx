@@ -35,6 +35,7 @@ const BackButton = styled.button`
   top: 180px;
   transform: rotate(90deg);
   font-size: 11px;
+  z-index:2;
 
   &:hover {
     font-weight: 500;
