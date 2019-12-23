@@ -7,7 +7,6 @@ import store from "../../store/store";
 @observer
 export default class ChooseDistrictPage extends React.Component<{}, {}> {
   componentDidMount() {
-    window.scroll(0, 0);
     if (store.searchSpecialization === "") {
       window.location.href = "/";
     }

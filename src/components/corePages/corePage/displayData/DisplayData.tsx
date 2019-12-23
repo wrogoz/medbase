@@ -19,6 +19,11 @@ interface DisplayDataProps {
 @observer
 export default class DisplayData extends React.Component<DisplayDataProps, {}> {
   private router: any;
+
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
+
   observeUserCitySearch = (e: React.FormEvent<HTMLInputElement>) => {
     store.searchCity = e.currentTarget.value;
   };
