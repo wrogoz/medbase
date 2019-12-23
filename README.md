@@ -1,4 +1,4 @@
-# MEDBASE: "NFZ earliest possible date" http://medbase.netlify.com
+# MEDBASE: "NFZ earliest possible date" 
 
 # Technologies: 
 - ES6
