@@ -5,6 +5,12 @@ import store from "../../store/store";
 @inject("store")
 @observer
 export default class ChooseDistrictPage extends React.Component<{}, {}> {
+  componentDidMount() {
+    window.scroll(0, 0);
+    if (store.searchSpecialization === "") {
+      window.location.href = "/";
+    }
+  }
   render() {
     return (
       <CorePage

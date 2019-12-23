@@ -8,6 +8,13 @@ import { Link } from "react-router-dom";
 @inject("store")
 @observer
 export default class Results extends React.Component<{}, {}> {
+  componentDidMount() {
+    window.scroll(0, 0);
+
+    if (store.searchSpecialization === "") {
+      window.location.href = "/";
+    }
+  }
   render() {
     const displayResults = store.dataApi.map((el, i) => {
       return (
