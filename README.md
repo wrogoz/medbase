@@ -25,5 +25,4 @@ Then:
 npm start
 
 
-# To do: 
-Popup on 1st page
+
