@@ -10,6 +10,7 @@ export default class ChooseSpecialistPage extends React.Component<{}, {}> {
   render() {
     return (
       <>
+       {store.isPopUpVisible?<Popup/>:null}
         <CorePage
           pageNumber="1"
           chooseText="specjalistę"

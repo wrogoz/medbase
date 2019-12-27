@@ -1,5 +1,7 @@
 import { observable } from "mobx";
 class Store {
+  @observable isPopUpVisible: boolean = true;
+  @observable PopUpTimer: number = 15;
   @observable specialization: string[] = [
     "okulista",
     "diabetolog",
