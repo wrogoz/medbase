@@ -14,10 +14,11 @@ export default class Layout extends React.Component<{}, {}> {
       <Container>
         <Header title="medbase" subtitle="Wyszukiwarka lekarzy NFZ" />
         <Switch>
-          <Route exact path="/" component={ChooseSpecialistPage} />
+          
           <Route exact path="/district" component={ChooseDistrictPage} />
           <Route exact path="/citySearch" component={CitySearchPage} />
           <Route exact path="/results" component={ResultsPage} />
+          <Route  path="/" component={ChooseSpecialistPage} />
         </Switch>
 
         <Footer />
