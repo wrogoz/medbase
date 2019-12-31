@@ -19,13 +19,18 @@ const getCityDataFromApi = (storeName: StoreProps) => {
     )
     .then(function(res) {
       const data = res.data.data.map((el: any) => {
-        return {
-          date: el.attributes.dates.date,
-          place: el.attributes.provider,
-          address: `${el.attributes.locality} ${el.attributes.address}`,
-          phone: el.attributes.phone
-        };
+        if (el.attributes.dates === null) {
+          return null;
+        } else {
+          return {
+            date: el.attributes.dates.date,
+            place: el.attributes.provider,
+            address: `${el.attributes.locality} ${el.attributes.address}`,
+            phone: el.attributes.phone
+          };
+        }
       });
+
       storeName.dataApi = data;
 
       return res.data.data;
@@ -36,7 +41,11 @@ const getCityDataFromApi = (storeName: StoreProps) => {
       }
     })
     .catch(function(error) {
+      console.log("************");
       console.log(error);
+      console.log("************");
+      console.log("Error: couldn't find city in database");
+      getDistrictDataFromApi(store);
     });
 };
 

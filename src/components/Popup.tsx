@@ -1,6 +1,6 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { ReactComponent } from "*.svg";
+import styled from "styled-components";
+
 import store from "../store/store";
 import { observer, inject } from "mobx-react";
 
@@ -21,7 +21,9 @@ export default class PopUp extends React.Component<{}, {}> {
   };
   render() {
     return (
-      <PopupComp>
+      <PopupComp
+      onKeyPress={this.closePopUp}
+      >
         <PopUpTxtBox>
           <p>
             Dane publikowane w MEDBASE są przekazywane przez szpitale oraz
@@ -31,7 +33,11 @@ export default class PopUp extends React.Component<{}, {}> {
             Informacje o pierwszym wolnym terminie powinny być przez nie
             aktualizowane co najmniej raz w tygodniu.
           </p>
-          <ClosePopUpButton onClick={this.closePopUp}>
+          <ClosePopUpButton 
+          onClick={this.closePopUp}
+          
+          >
+                            
             Zamknij ({store.PopUpTimer} sek.)
           </ClosePopUpButton>
         </PopUpTxtBox>

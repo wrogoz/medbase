@@ -8,6 +8,17 @@ import { Link } from "react-router-dom";
 @inject("store")
 @observer
 export default class Results extends React.Component<{}, {}> {
+  clearData = () => {
+    store.dataApi = [
+      {
+        date: "",
+        place: "",
+        address: "",
+        phone: ""
+      }
+    ];
+  };
+
   componentDidMount() {
     window.scroll(0, 0);
 
@@ -17,20 +28,23 @@ export default class Results extends React.Component<{}, {}> {
   }
   render() {
     const displayResults = store.dataApi.map((el, i) => {
-      return (
-        <Result key={`result-${i}`}>
-          <Date>Termin: {el.date}</Date>
-          <Place>{el.place}</Place>
-          <Adress>{el.address}</Adress>
-          <Phone>{el.phone}</Phone>
-        </Result>
-      );
+      if (el === null) {
+        return null;
+      } else {
+        return (
+          <Result key={`result-${i}`}>
+            <Date>Termin: {el.date}</Date>
+            <Place>{el.place}</Place>
+            <Adress>{el.address}</Adress>
+            <Phone>{el.phone}</Phone>
+          </Result>
+        );
+      }
     });
 
     const displayLoading = (
       <>
-        <p>Trwa pobieranie danych</p>
-        <p>Proszę czekać... w końcu to NFZ :)</p>
+        <p>Trwa pobieranie danych...</p>
       </>
     );
 
@@ -38,7 +52,7 @@ export default class Results extends React.Component<{}, {}> {
       <>
         <BackwardButton linkTo={"/citySearch"} text="powrót" />
 
-        <RestartButton>
+        <RestartButton onClick={this.clearData}>
           <StyledLink to="/">
             <p>Ponowne wyszukiwanie</p>
           </StyledLink>
