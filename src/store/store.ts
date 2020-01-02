@@ -1,5 +1,6 @@
 import { observable } from "mobx";
 class Store {
+  @observable dataLoading:boolean = false;
   @observable isPopUpVisible: boolean = true;
   @observable PopUpTimer: number = 15;
   @observable specialization: string[] = [

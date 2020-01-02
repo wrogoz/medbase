@@ -59,7 +59,7 @@ export default class Results extends React.Component<{}, {}> {
         </RestartButton>
 
         <ResultsList>
-          {store.dataApi.length < 1 ? displayLoading : displayResults}
+          {store.dataLoading ? displayLoading : displayResults}
         </ResultsList>
       </>
     );

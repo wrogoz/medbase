@@ -19,7 +19,10 @@ export default class CorePage extends React.Component<Core, {}> {
   render() {
     return (
       <Core>
-        <BackwardButton linkTo={this.props.linkTo} text={this.props.text} />
+        <BackwardButton
+          linkTo={this.props.linkTo}
+          text={this.props.text} 
+          />
         <Circle>
           <p>{this.props.pageNumber}</p>
         </Circle>
