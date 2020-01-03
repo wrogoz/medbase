@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 @inject("store")
 @observer
 export default class Results extends React.Component<{}, {}> {
-  clearData = () => {
+  clearStoreDataApi = () => {
     store.dataApi = [
       {
         date: "",
@@ -42,24 +42,20 @@ export default class Results extends React.Component<{}, {}> {
       }
     });
 
-    const displayLoading = (
-      <>
-        <p>Trwa pobieranie danych...</p>
-      </>
-    );
+    const displayLoading = <p>Trwa pobieranie danych...</p>;
 
     return (
       <>
         <BackwardButton linkTo={"/citySearch"} text="powrót" />
 
-        <RestartButton onClick={this.clearData}>
+        <RestartButton onClick={this.clearStoreDataApi}>
           <StyledLink to="/">
             <p>Ponowne wyszukiwanie</p>
           </StyledLink>
         </RestartButton>
 
         <ResultsList>
-          {store.dataLoading ? displayLoading : displayResults}
+          {store.loadingApi ? displayLoading : displayResults}
         </ResultsList>
       </>
     );

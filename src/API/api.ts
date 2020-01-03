@@ -13,7 +13,7 @@ interface StoreProps {
 }
 
 const getCityDataFromApi = (storeName: StoreProps) => {
-  store.dataLoading = true;
+  store.loadingApi = true;
   axios
     .get(
       `https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&locality=${store.searchCity}&case=1&benefit=${store.searchSpecialization}&format=json`
@@ -33,7 +33,7 @@ const getCityDataFromApi = (storeName: StoreProps) => {
       });
 
       storeName.dataApi = data;
-      store.dataLoading=false;
+      store.loadingApi=false;
       return res.data.data;
     })
     .then(res => {
@@ -52,7 +52,7 @@ const getCityDataFromApi = (storeName: StoreProps) => {
 };
 
 const getDistrictDataFromApi = (storeName: StoreProps) => {
-  store.dataLoading=true;
+  store.loadingApi=true;
   axios
     .get(
       `https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&case=1&benefit=${store.searchSpecialization}&format=json`
@@ -67,7 +67,7 @@ const getDistrictDataFromApi = (storeName: StoreProps) => {
         };
       });
       storeName.dataApi = data;
-      store.dataLoading = false;
+      store.loadingApi = false;
     })
     
     .catch(function(error) {

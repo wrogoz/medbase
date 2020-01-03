@@ -11,6 +11,7 @@ interface Core {
   followTo: string;
   linkTo?: string | null;
   text?: string;
+  onClickHandler: (arg: string) => void;
 }
 
 @inject("store")
@@ -19,15 +20,13 @@ export default class CorePage extends React.Component<Core, {}> {
   render() {
     return (
       <Core>
-        <BackwardButton
-          linkTo={this.props.linkTo}
-          text={this.props.text} 
-          />
+        <BackwardButton linkTo={this.props.linkTo} text={this.props.text} />
         <Circle>
           <p>{this.props.pageNumber}</p>
         </Circle>
         <CoreMessage>Wybierz {this.props.chooseText}</CoreMessage>
         <DisplayData
+          onClickHandler={this.props.onClickHandler}
           listType={this.props.listType}
           followTo={this.props.followTo}
         />

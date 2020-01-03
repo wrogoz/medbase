@@ -3,14 +3,12 @@ import styled from "styled-components";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import store from "../../../../../store/store";
-import {
-  getCityDataFromApi,
-  getDistrictDataFromApi
-} from "../../../../../API/api";
+
 
 interface ButtonProps {
   buttonTxt: string;
   followTo: string;
+  onClickHandler: any;
 }
 
 @inject("store")
@@ -21,31 +19,15 @@ export default class Button extends React.Component<ButtonProps, {}> {
     super(props);
     this.refButton = React.createRef();
   }
-
-  saveValueToStore = () => {
-    //  -----------------SAVE SPECIALIZATION TO STORE
-    if (this.props.followTo === "/district") {
-      store.specializationNameToOfficialName(
-        this.refButton.current.textContent
-      );
-    }
-    //  -----------------SAVE DISTRICT TO STORE
-    else if (this.props.followTo === "/citySearch") {
-      store.districtNameToDistrictCode(this.refButton.current.textContent);
-
-      //  -----------------SAVE CITY NAME TO STORE (OPTIONAL)
-    } else if (this.props.followTo === "/results") {
-      if (store.searchCity.length > 0) {
-        getCityDataFromApi(store);
-      } else {
-        getDistrictDataFromApi(store);
-      }
-    }
-  };
+  saveButtonTxt = ()=>{
+    store.selectedButton =  this.refButton.current.textContent;
+    
+  }
+  
   render() {
     return (
       <StyledLink to={this.props.followTo} ref={this.refButton}>
-        <StyledButton onClick={this.saveValueToStore}>
+        <StyledButton onClick={()=>{this.saveButtonTxt();  this.props.onClickHandler();}}>
           {this.props.buttonTxt}
         </StyledButton>
       </StyledLink>

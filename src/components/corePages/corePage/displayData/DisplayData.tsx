@@ -13,6 +13,7 @@ import { withRouter } from "react-router-dom";
 interface DisplayDataProps {
   listType?: string[];
   followTo: string;
+  onClickHandler: (arg:string)=>void;
 }
 
 @inject("store")
@@ -60,7 +61,11 @@ export default class DisplayData extends React.Component<DisplayDataProps, {}> {
         const id = `${i}${el}`;
         return (
           <CoreListItem key={id}>
-            <Button followTo={this.props.followTo} buttonTxt={el} />
+            <Button
+              followTo={this.props.followTo}
+              buttonTxt={el}
+              onClickHandler={this.props.onClickHandler}
+            />
           </CoreListItem>
         );
       });
@@ -72,6 +77,7 @@ export default class DisplayData extends React.Component<DisplayDataProps, {}> {
           <Button
             followTo={this.props.followTo}
             buttonTxt="Wynik wyszukiwania"
+            onClickHandler={this.props.onClickHandler}
           />
         </CitySearchBox>
       );

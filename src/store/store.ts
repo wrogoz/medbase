@@ -1,8 +1,20 @@
 import { observable } from "mobx";
 class Store {
-  @observable dataLoading:boolean = false;
+  @observable loadingApi:boolean = false;
   @observable isPopUpVisible: boolean = true;
   @observable PopUpTimer: number = 15;
+  @observable selectedButton:string = '';
+  @observable searchSpecialization: string = "";
+  @observable searchDistrict: string = "";
+  @observable searchCity: string = "";
+  @observable dataApi = [
+    {
+      date: "",
+      place: "",
+      address: "",
+      phone: ""
+    }
+  ];
   @observable specialization: string[] = [
     "okulista",
     "diabetolog",
@@ -35,17 +47,7 @@ class Store {
     "wielkopolskie",
     "zach. pomorskie"
   ];
-  @observable searchSpecialization: string = "";
-  @observable searchDistrict: string = "";
-  @observable searchCity: string = "";
-  @observable dataApi = [
-    {
-      date: "",
-      place: "",
-      address: "",
-      phone: ""
-    }
-  ];
+ 
   specializationNameToOfficialName = (specialization: string) => {
     switch (specialization) {
       case "neurolog":
