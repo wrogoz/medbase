@@ -4,15 +4,12 @@ import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import store from "../../../../../store/store";
 interface BackwardButtonProps {
-  linkTo?: string | null;
+  backTo?: string | null;
   text?: string;
 }
 @inject("store")
 @observer
-export default class BackwardButton extends React.Component<
-  BackwardButtonProps,
-  {}
-> {
+export default class BackwardButton extends React.Component<BackwardButtonProps,{}>{
   resetResult = () => {
     if (store.dataApi.length > 1) {
       store.dataApi = [
@@ -28,9 +25,9 @@ export default class BackwardButton extends React.Component<
   render() {
     return (
       <>
-        {this.props.linkTo ? (
+        {this.props.backTo ? (
           <BackButton onClick={this.resetResult}>
-            <StyledLink to={this.props.linkTo}>
+            <StyledLink to={this.props.backTo}>
               <p>{this.props.text}</p>
             </StyledLink>
           </BackButton>

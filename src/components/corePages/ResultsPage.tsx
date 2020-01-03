@@ -46,7 +46,7 @@ export default class Results extends React.Component<{}, {}> {
 
     return (
       <>
-        <BackwardButton linkTo={"/citySearch"} text="powrót" />
+        <BackwardButton backTo={"/citySearch"} text="powrót" />
 
         <RestartButton onClick={this.clearStoreDataApi}>
           <StyledLink to="/">

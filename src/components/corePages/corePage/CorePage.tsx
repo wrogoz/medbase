@@ -9,9 +9,9 @@ interface Core {
   pageNumber: string;
   listType?: string[];
   followTo: string;
-  linkTo?: string | null;
+  backTo?: string | null;
   text?: string;
-  onClickHandler: (arg: string) => void;
+  onClickHandler: (arg: string) => any;
 }
 
 @inject("store")
@@ -20,7 +20,7 @@ export default class CorePage extends React.Component<Core, {}> {
   render() {
     return (
       <Core>
-        <BackwardButton linkTo={this.props.linkTo} text={this.props.text} />
+        <BackwardButton backTo={this.props.backTo} text={this.props.text} />
         <Circle>
           <p>{this.props.pageNumber}</p>
         </Circle>

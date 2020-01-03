@@ -6,9 +6,9 @@ import store from "../../store/store";
 @observer
 export default class ChooseDistrictPage extends React.Component<{}, {}> {
   componentDidMount() {
-    // if (store.searchSpecialization === "") {
-    //   window.location.href = "/";
-    // }
+    if (store.searchSpecialization === "") {
+      window.location.href = "/";
+    }
   }
 
   addDistrictToStore = ()=>{
@@ -23,7 +23,7 @@ export default class ChooseDistrictPage extends React.Component<{}, {}> {
         chooseText="województwo"
         listType={store.district}
         followTo="/citySearch"
-        linkTo="/"
+        backTo="/"
         text="powrót"
       />
     );
