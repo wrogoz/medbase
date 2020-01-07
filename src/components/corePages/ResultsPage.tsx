@@ -80,7 +80,7 @@ const Result = styled.li`
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
-  border-bottom: 1px solid ${props => props.theme.primary};
+  border-bottom: 1px solid ${props => props.theme.primaryColor};
   text-align: center;
   margin: 0;
   min-width: 70%;
@@ -96,30 +96,30 @@ const Date = styled.p`
   font-weight: 500;
   letter-spacing: 3px;
   margin-bottom: 0px;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
 `;
 const Place = styled.p`
   font-size: 12px;
   letter-spacing: 2px;
   line-height: 20px;
   margin-bottom: 10px;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
 `;
 const Adress = styled.p`
   font-size: 11px;
   letter-spacing: 1px;
   margin-top: 0;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
 `;
 const Phone = styled.p`
   font-size: 12px;
   letter-spacing: 5px;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
 `;
 
 const RestartButton = styled.button`
   outline: none;
-  border: 1px solid ${props => props.theme.primary};
+  border: 1px solid ${props => props.theme.primaryColor};
   border-radius: 7px 7px 0 0;
   border-bottom: none;
   cursor: pointer;
@@ -157,10 +157,10 @@ const RestartButton = styled.button`
 const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
   text-transform: uppercase;
 `;
 
 const DisplayLoading = styled.p`
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.primaryColor};
 `;

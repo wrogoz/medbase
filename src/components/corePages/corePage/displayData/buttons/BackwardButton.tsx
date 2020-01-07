@@ -80,6 +80,6 @@ const BackButton = styled.button`
 const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color:${props => props.theme.primary}
+  color:${props => props.theme.primaryColor}
   text-transform: uppercase;
 `;

@@ -39,8 +39,7 @@ const AppTitle = styled.h1`
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 400;
-  color:${props => props.theme.primary}
-  @media (max-width: 300px) {
+  color: ${props => props.theme.primaryColor} @media (max-width: 300px) {
     font-size: 22px;
   }
   @media (min-width: 530px) {
@@ -52,14 +51,14 @@ const AppTitle = styled.h1`
   }
   @media (min-width: 1050px) {
     font-size: 90px;
-    padding-top: 25px;
+    padding-top: 10px;
   }
 `;
 const SubTitle = styled.h2`
   font-size: 16px;
   margin: 0;
   letter-spacing: 0.1em;
-  color: #9e9a9a;
+  color: #696758;
   font-weight: 400;
   padding-bottom: 20px;
 
@@ -77,5 +76,6 @@ const SubTitle = styled.h2`
   }
   @media (min-width: 1050px) {
     padding-top: 0;
+    margin-bottom: 1%;
   }
 `;

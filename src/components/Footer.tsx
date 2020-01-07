@@ -17,13 +17,13 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.thirdColor};
   position: sticky;
   bottom: 0;
   margin-top: auto;
   p {
     font-size: 0.75em;
-    color: #666262;
+    color: ${props => props.theme.secondaryColor};
     letter-spacing: 9px;
   }
   @media (min-width: 768px) {

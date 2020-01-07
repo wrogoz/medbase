@@ -1,7 +1,7 @@
-const theme={
-    primary:"#1e272e",
-    secondary:"#f2f2f2",
-    third:"#9e9a9a"
+const theme = {
+  primaryColor: "#36393B",
+  secondaryColor: "#EEE6AB",
+  thirdColor: "#45484B"
 };
 
-export default  theme
+export default theme;

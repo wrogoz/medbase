@@ -154,7 +154,7 @@ const CitySearchBox = styled.div`
             outline:none;
             border:none;
             border-bottom:1px solid #747474;
-            color:${props => props.theme.primary}
+            color:${props => props.theme.primaryColor}
             text-align:center;
             text-transform:uppercase;
             width:75%;

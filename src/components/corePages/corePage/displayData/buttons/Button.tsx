@@ -46,8 +46,8 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 7px;
 
-  background-color: ${props => props.theme.primary};
-  color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.secondaryColor};
   letter-spacing: -3%;
   font-size: 12px;
   text-transform: uppercase;
@@ -55,7 +55,6 @@ const StyledButton = styled.button`
   transition: 0.3s;
   &:hover {
     transform: scale(1.2);
-    
   }
 
   @media (min-width: 768px) {
@@ -70,5 +69,5 @@ const StyledButton = styled.button`
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${props => props.theme.secondary};
+  color: ${props => props.theme.secondaryColor};
 `;
