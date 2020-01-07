@@ -42,7 +42,7 @@ export default class Results extends React.Component<{}, {}> {
       }
     });
 
-    const displayLoading = <p>Trwa pobieranie danych...</p>;
+    const loading = <DisplayLoading>Trwa pobieranie danych...</DisplayLoading>;
 
     return (
       <>
@@ -54,9 +54,7 @@ export default class Results extends React.Component<{}, {}> {
           </StyledLink>
         </RestartButton>
 
-        <ResultsList>
-          {store.loadingApi ? displayLoading : displayResults}
-        </ResultsList>
+        <ResultsList>{store.loadingApi ? loading : displayResults}</ResultsList>
       </>
     );
   }
@@ -82,7 +80,7 @@ const Result = styled.li`
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid ${props => props.theme.primary};
   text-align: center;
   margin: 0;
   min-width: 70%;
@@ -98,26 +96,30 @@ const Date = styled.p`
   font-weight: 500;
   letter-spacing: 3px;
   margin-bottom: 0px;
+  color: ${props => props.theme.primary};
 `;
 const Place = styled.p`
   font-size: 12px;
   letter-spacing: 2px;
   line-height: 20px;
   margin-bottom: 10px;
+  color: ${props => props.theme.primary};
 `;
 const Adress = styled.p`
   font-size: 11px;
   letter-spacing: 1px;
   margin-top: 0;
+  color: ${props => props.theme.primary};
 `;
 const Phone = styled.p`
   font-size: 12px;
   letter-spacing: 5px;
+  color: ${props => props.theme.primary};
 `;
 
 const RestartButton = styled.button`
   outline: none;
-  border: 1px solid black;
+  border: 1px solid ${props => props.theme.primary};
   border-radius: 7px 7px 0 0;
   border-bottom: none;
   cursor: pointer;
@@ -155,6 +157,10 @@ const RestartButton = styled.button`
 const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color: #000;
+  color: ${props => props.theme.primary};
   text-transform: uppercase;
+`;
+
+const DisplayLoading = styled.p`
+  color: ${props => props.theme.primary};
 `;

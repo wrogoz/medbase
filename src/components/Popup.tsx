@@ -88,7 +88,7 @@ const ClosePopUpButton = styled.button`
   border: none;
   border-radius: 7px;
   margin: auto 0;
-  background-color: #000;
+  background-color:${props => props.theme.primary};
   color: #f2f2f2;
   letter-spacing: -3%;
   font-size: 12px;

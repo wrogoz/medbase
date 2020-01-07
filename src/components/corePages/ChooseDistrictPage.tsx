@@ -13,12 +13,12 @@ export default class ChooseDistrictPage extends React.Component<{}, {}> {
 
   addDistrictToStore = ()=>{
     store.districtNameToDistrictCode(store.selectedButton);
-    console.log('addDistrictToStore')
+    
   }
   render() {
     return (
       <CorePage
-      onClickHandler={this.addDistrictToStore}
+        onClickHandler={this.addDistrictToStore}
         pageNumber="2"
         chooseText="województwo"
         listType={store.district}

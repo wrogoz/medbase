@@ -17,7 +17,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f3f3f3;
+  background-color: ${props => props.theme.secondary};
   position: sticky;
   bottom: 0;
   margin-top: auto;
@@ -32,4 +32,4 @@ const StyledFooter = styled.footer`
   @media (min-width: 1050px) {
     margin-top: auto;
   }
-`
+`;

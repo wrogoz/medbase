@@ -27,6 +27,8 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 1px;
   background-color: #fff;
+  color:${props => props.theme.primary}
+  
   z-index: 1;
 `;
 const AppTitle = styled.h1`
@@ -37,6 +39,7 @@ const AppTitle = styled.h1`
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 400;
+  color:${props => props.theme.primary}
   @media (max-width: 300px) {
     font-size: 22px;
   }
@@ -49,7 +52,7 @@ const AppTitle = styled.h1`
   }
   @media (min-width: 1050px) {
     font-size: 90px;
-    padding-top: 2px;
+    padding-top: 25px;
   }
 `;
 const SubTitle = styled.h2`

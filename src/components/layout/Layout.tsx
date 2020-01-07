@@ -6,23 +6,25 @@ import ChooseSpecialistPage from "./../corePages/ChooseSpecialistPage";
 import ChooseDistrictPage from "../corePages/ChooseDistrictPage";
 import CitySearchPage from "../corePages/CitySearchPage";
 import ResultsPage from "../corePages/ResultsPage";
-import styled from "styled-components";
-
+import styled,{ThemeProvider} from "styled-components";
+import theme from '../../globalStyles/theme';
 export default class Layout extends React.Component<{}, {}> {
   render() {
     return (
-      <Container>
-        <Header title="medbase" subtitle="Wyszukiwarka lekarzy NFZ" />
-        <Switch>
-          
-          <Route exact path="/district" component={ChooseDistrictPage} />
-          <Route exact path="/citySearch" component={CitySearchPage} />
-          <Route exact path="/results" component={ResultsPage} />
-          <Route  path="/" component={ChooseSpecialistPage} />
-        </Switch>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Header title="medbase" subtitle="Wyszukiwarka lekarzy NFZ" />
+          <Switch>
+            
+            <Route exact path="/district" component={ChooseDistrictPage} />
+            <Route exact path="/citySearch" component={CitySearchPage} />
+            <Route exact path="/results" component={ResultsPage} />
+            <Route  path="/" component={ChooseSpecialistPage} />
+          </Switch>
 
-        <Footer />
-      </Container>
+          <Footer />
+        </Container>
+      </ThemeProvider>
     );
   }
 }

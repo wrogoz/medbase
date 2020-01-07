@@ -13,7 +13,7 @@ import { withRouter } from "react-router-dom";
 interface DisplayDataProps {
   listType?: string[];
   followTo: string;
-  onClickHandler: (arg:string)=>void;
+  onClickHandler: (arg: string) => void;
 }
 
 @inject("store")
@@ -154,6 +154,7 @@ const CitySearchBox = styled.div`
             outline:none;
             border:none;
             border-bottom:1px solid #747474;
+            color:${props => props.theme.primary}
             text-align:center;
             text-transform:uppercase;
             width:75%;

@@ -9,7 +9,10 @@ interface BackwardButtonProps {
 }
 @inject("store")
 @observer
-export default class BackwardButton extends React.Component<BackwardButtonProps,{}>{
+export default class BackwardButton extends React.Component<
+  BackwardButtonProps,
+  {}
+> {
   resetResult = () => {
     if (store.dataApi.length > 1) {
       store.dataApi = [
@@ -39,7 +42,7 @@ export default class BackwardButton extends React.Component<BackwardButtonProps,
 
 const BackButton = styled.button`
   outline: none;
-  border: 1px solid black;
+  border: 1px solid ${props => props.theme.primary};
   border-radius: 7px 7px 0 0;
   border-bottom: none;
   cursor: pointer;
@@ -77,6 +80,6 @@ const BackButton = styled.button`
 const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color: #000;
+  color:${props => props.theme.primary}
   text-transform: uppercase;
 `;

@@ -48,7 +48,8 @@ const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #747474;
+  color:${props => props.theme.primary}
+  border: 1px solid ${props => props.theme.third};
   border-radius: 50%;
   margin-top: 20px;
 
@@ -76,7 +77,7 @@ const CoreMessage = styled.p`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.11em;
-  color: #747474;
+  color: ${props => props.theme.third};
   margin: 40px 0 24px 0px;
 
   @media (min-width: 530px) {
