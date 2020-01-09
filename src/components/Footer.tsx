@@ -22,12 +22,16 @@ const StyledFooter = styled.footer`
   bottom: 0;
   margin-top: auto;
   p {
-    font-size: 0.75em;
-    color: ${props => props.theme.secondaryColor};
-    letter-spacing: 9px;
+    font-size: 0.6em;
+    color: #f9f9f9;
+    letter-spacing: 4px;
   }
   @media (min-width: 768px) {
     padding: 15px 0;
+    p{
+      font-size: 0.8em;
+    letter-spacing: 9px;
+    }
   }
   @media (min-width: 1050px) {
     margin-top: auto;

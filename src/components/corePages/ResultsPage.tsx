@@ -4,6 +4,7 @@ import { inject, observer } from "mobx-react";
 import store from "../../store/store";
 import BackwardButton from "./corePage/displayData/buttons/BackwardButton";
 import { Link } from "react-router-dom";
+import PhoneIcon from '../../img/phone.svg';
 
 @inject("store")
 @observer
@@ -36,7 +37,7 @@ export default class Results extends React.Component<{}, {}> {
             <Date>Termin: {el.date}</Date>
             <Place>{el.place}</Place>
             <Adress>{el.address}</Adress>
-            <Phone>{el.phone}</Phone>
+            <Phone><img src={PhoneIcon} alt="phone icon"/>{el.phone}</Phone>
           </Result>
         );
       }
@@ -114,7 +115,15 @@ const Adress = styled.p`
 const Phone = styled.p`
   font-size: 12px;
   letter-spacing: 5px;
+  display:flex;
+  align-items:center;
   color: ${props => props.theme.primaryColor};
+  img{
+    {
+      height: 20px;
+      margin-right: 10px;
+  }
+  }
 `;
 
 const RestartButton = styled.button`

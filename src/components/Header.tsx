@@ -58,7 +58,7 @@ const SubTitle = styled.h2`
   font-size: 16px;
   margin: 0;
   letter-spacing: 0.1em;
-  color: #696758;
+  color: ${props => props.theme.thirdColor};
   font-weight: 400;
   padding-bottom: 20px;
 
