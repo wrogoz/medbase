@@ -41,7 +41,7 @@ const StyledFooter = styled.footer`
     padding: 15px 0;
     p{
       font-size: 0.8em;
-    letter-spacing: 9px;
+
     }
   }
   @media (min-width: 1050px) {
@@ -59,6 +59,10 @@ p{
   margin:0;
   letter-spacing:0;
   font-size:0.5em;
+  @media(min-width:768px){
+    font-size:0.7em;
+    padding:3px;
+  }
 }
 
 `
