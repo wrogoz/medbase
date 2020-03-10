@@ -7,10 +7,11 @@ export default class Footer extends React.Component<{}, {}> {
       <StyledFooter>
         <ContactBox>
           <p>contact:</p>
+
           <p>admin@medbase.pl</p>
         </ContactBox>
 
-        <p>2020&copy;Medbase</p>
+        <p>2020<sup>&copy;</sup>Medbase</p>
       </StyledFooter>
     );
   }
@@ -40,7 +41,10 @@ const StyledFooter = styled.footer`
   @media (min-width: 768px) {
     padding: 15px 0;
     p{
-      font-size: 0.8em;
+
+      font-size: 1em;
+      margin-right:40%;
+      letter-spacing:10px;
 
     }
   }
