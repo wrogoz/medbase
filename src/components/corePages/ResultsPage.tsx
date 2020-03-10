@@ -56,6 +56,10 @@ export default class Results extends React.Component<{}, {}> {
         </RestartButton>
 
         <ResultsList>{store.loadingApi ? loading : displayResults}</ResultsList>
+        <SourceInfo>
+
+           Dane pochodzą z https://api.nfz.gov.pl/
+          </SourceInfo>
       </>
     );
   }
@@ -173,3 +177,9 @@ const StyledLink = styled(Link)`
 const DisplayLoading = styled.p`
   color: ${props => props.theme.primaryColor};
 `;
+const SourceInfo = styled.p`
+  font-size:7px;
+  color: #90909050;
+  margin:0;
+  padding:0;
+`

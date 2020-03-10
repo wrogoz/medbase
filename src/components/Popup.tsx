@@ -33,11 +33,16 @@ export default class PopUp extends React.Component<{}, {}> {
             Informacje o pierwszym wolnym terminie powinny być przez nie
             aktualizowane co najmniej raz w tygodniu.
           </p>
-          <ClosePopUpButton 
+          <p>
+            *Aplikacja korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie.
+            Dalsze korzystanie z aplikacji oznacza, że zgadzasz się na ich użycie.
+          </p>
+
+          <ClosePopUpButton
           onClick={this.closePopUp}
-          
+
           >
-                            
+
             Zamknij ({store.PopUpTimer} sek.)
           </ClosePopUpButton>
         </PopUpTxtBox>
@@ -79,6 +84,11 @@ const PopUpTxtBox = styled.div`
   p:nth-of-type(2) {
     margin-top: 15px;
   }
+  p:nth-of-type(3) {
+    margin-top: 15px;
+    font-size:8px;
+  }
+
 `;
 const ClosePopUpButton = styled.button`
   height: 36px;
