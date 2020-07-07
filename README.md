@@ -1,6 +1,7 @@
-# MEDBASE: "NFZ earliest possible date" 
+# MEDBASE: "NFZ earliest possible date"  www.medbase.pl
 
-# Technologies: 
+
+# Technologies:
 - ES6
 - Typescript
 - React
