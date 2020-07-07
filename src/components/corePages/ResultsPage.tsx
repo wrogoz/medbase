@@ -6,9 +6,19 @@ import BackwardButton from "./corePage/displayData/buttons/BackwardButton";
 import { Link } from "react-router-dom";
 import PhoneIcon from '../../img/phone.svg';
 
+type ResultState={
+  loadingText:string
+}
+
 @inject("store")
 @observer
-export default class Results extends React.Component<{}, {}> {
+export default class Results extends React.Component<{}, ResultState> {
+  constructor(props: Readonly<{}>){
+    super(props)
+    this.state={
+      loadingText:'Trwa pobieranie danych...'
+    }
+  }
   clearStoreDataApi = () => {
     store.dataApi = [
       {
@@ -26,12 +36,25 @@ export default class Results extends React.Component<{}, {}> {
     if (store.searchSpecialization === "") {
       window.location.href = "/";
     }
+    setTimeout(() => {
+      if(store.loadingApi){
+        this.setState({
+          loadingText:'Brak wyników w bazie danych dla tych parametrów.'
+        })
+      }
+
+    }, 5000);
   }
   render() {
-    const displayResults = store.dataApi.map((el, i) => {
-      if (el === null) {
+    let displayResults;
+    if(store.dataApi!==null){
+    displayResults = store.dataApi.map((el, i) => {
+      if (el.date === null) {
+
         return null;
       } else {
+
+
         return (
           <Result key={`result-${i}`}>
             <Date>Termin: {el.date}</Date>
@@ -42,8 +65,24 @@ export default class Results extends React.Component<{}, {}> {
         );
       }
     });
+  }
+    let loading;
+    if(this.state.loadingText.length>26){
+      let text = this.state.loadingText.split('.')
+      loading = <>
+        <DisplayLoading>{text[0]}.</DisplayLoading>
+        <DisplayLoading>Sugestie:</DisplayLoading>
+        <Suggestions>
+          <li>Sprawdź połączenie z internetem</li>
+          <li>Poszukaj w innym województwie</li>
+          <li>Spróbuj ponownie później</li>
+        </Suggestions>
+      </>
+    }else{
+      loading = <DisplayLoading>{this.state.loadingText}</DisplayLoading>;
+    }
 
-    const loading = <DisplayLoading>Trwa pobieranie danych...</DisplayLoading>;
+
 
     return (
       <>
@@ -76,6 +115,7 @@ const ResultsList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   min-height: 70vh;
   padding: 10px;
 `;
@@ -176,7 +216,19 @@ const StyledLink = styled(Link)`
 
 const DisplayLoading = styled.p`
   color: ${props => props.theme.primaryColor};
+  width: 75%;
+  text-align: center;
+  &&:first-of-type{
+    margin-top:20vh;
+
+  }
+
 `;
+const Suggestions = styled.ul`
+  list-style: disc;
+  font-size:13
+  margin:0 auto;
+`
 const SourceInfo = styled.p`
   font-size:7px;
   color: #90909050;

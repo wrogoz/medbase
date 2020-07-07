@@ -40,7 +40,7 @@ const getCityDataFromApi = (storeName: StoreProps) => {
       if (res.length < 1) {
         getDistrictDataFromApi(store);
       }
-      
+
     })
     .catch(function(error) {
       console.log("************");
@@ -58,21 +58,33 @@ const getDistrictDataFromApi = (storeName: StoreProps) => {
       `https://api.nfz.gov.pl/app-itl-api/queues?province=${store.searchDistrict}&case=1&benefit=${store.searchSpecialization}&format=json`
     )
     .then(function(res) {
+
       const data = res.data.data.map((el: any) => {
-        return {
-          date: el.attributes.dates.date,
-          place: el.attributes.provider,
-          address: `${el.attributes.locality} ${el.attributes.address}`,
-          phone: el.attributes.phone
-        };
+          if(el.attributes.dates!==null){
+            return {
+              date: el.attributes.dates.date ,
+              place: el.attributes.provider,
+              address: `${el.attributes.locality} ${el.attributes.address}`,
+              phone: el.attributes.phone
+            };
+          }else{
+            return {
+              date: 'brak danych' ,
+              place: el.attributes.provider,
+              address: `${el.attributes.locality} ${el.attributes.address}`,
+              phone: el.attributes.phone
+            };
+          }
+
       });
       storeName.dataApi = data;
       store.loadingApi = false;
     })
-    
+
     .catch(function(error) {
       // handle error
       console.log(error);
+
     });
 };
 
