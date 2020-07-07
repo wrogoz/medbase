@@ -27,6 +27,7 @@ export default class DisplayData extends React.Component<DisplayDataProps, {}> {
 
   observeUserCitySearch = (e: React.FormEvent<HTMLInputElement>) => {
     store.searchCity = e.currentTarget.value;
+
   };
   pressEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -136,7 +137,7 @@ const CitySearchBox = styled.div`
     background-size: 48%;
     background-position: 53% 0%;
     background-repeat:no-repeat;
-    
+
         @media(min-width:1050px){
             padding-top:3%;
             background-position: 53% 10%

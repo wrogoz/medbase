@@ -47,7 +47,7 @@ export default class Results extends React.Component<{}, ResultState> {
   }
   render() {
     let displayResults;
-    if(store.dataApi!==null){
+
     displayResults = store.dataApi.map((el, i) => {
       if (el.date === null) {
 
@@ -65,7 +65,7 @@ export default class Results extends React.Component<{}, ResultState> {
         );
       }
     });
-  }
+
     let loading;
     if(this.state.loadingText.length>26){
       let text = this.state.loadingText.split('.')

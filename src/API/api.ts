@@ -20,8 +20,13 @@ const getCityDataFromApi = (storeName: StoreProps) => {
     )
     .then(function(res) {
       const data = res.data.data.map((el: any) => {
-        if (el.attributes.dates === null) {
-          return null;
+        if(el.attributes.dates===null){
+          return {
+            date: 'brak danych',
+            place: el.attributes.provider,
+            address: `${el.attributes.locality} ${el.attributes.address}`,
+            phone: el.attributes.phone
+          };
         } else {
           return {
             date: el.attributes.dates.date,
