@@ -68,9 +68,9 @@ export default class Results extends React.Component<{}, ResultState> {
 
     let loading;
     if(this.state.loadingText.length>26){
-      let text = this.state.loadingText.split('.')
+
       loading = <>
-        <DisplayLoading>{text[0]}.</DisplayLoading>
+        <DisplayLoading>{this.state.loadingText}.</DisplayLoading>
         <DisplayLoading>Sugestie:</DisplayLoading>
         <Suggestions>
           <li>Sprawdź połączenie z internetem</li>
