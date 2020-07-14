@@ -51,7 +51,7 @@ const getCityDataFromApi = (storeName: StoreProps) => {
       console.log("************");
       console.log(error);
       console.log("************");
-      console.log("Error: couldn't find city in database");
+      console.log("Error: couldn't find city in database. App will show data by district search");
       getDistrictDataFromApi(store);
     });
 };
