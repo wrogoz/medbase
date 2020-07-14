@@ -1,9 +1,9 @@
 import React from 'react';
 import {configure, shallow }from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Layout from './Layout';
-import Header from '../Header'
-import Footer from '../Footer'
+import Layout from '../../../components/layout/Layout';
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 import { Route } from "react-router-dom";
 configure({adapter:new Adapter()});
 
