@@ -11,6 +11,7 @@
 - Styled-components
 - Axios
 - Jest 
+- Enzyme
 
 
 

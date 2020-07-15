@@ -12,7 +12,7 @@ export default class Header extends React.Component<HeaderElements, {}> {
       <StyledHeader>
         <AppTitle>{this.props.title}</AppTitle>
 
-        <SubTitle>{this.props.subtitle}</SubTitle>
+       
       </StyledHeader>
     );
   }
@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 1px;
   background-color: #fff;
-  color:${props => props.theme.primary}
+  color:${props => props.theme.primary};
   
   z-index: 1;
 `;
@@ -39,7 +39,8 @@ const AppTitle = styled.h1`
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 400;
-  color: ${props => props.theme.primaryColor} @media (max-width: 300px) {
+  color: ${props => props.theme.primaryColor};
+   @media (max-width: 300px) {
     font-size: 22px;
   }
   @media (min-width: 530px) {

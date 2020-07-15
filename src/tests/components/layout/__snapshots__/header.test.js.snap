@@ -3,6 +3,5 @@
 exports[`should render header correctly 1`] = `
 <ForwardRef(styled.header)>
   <ForwardRef(styled.h1) />
-  <ForwardRef(styled.h2) />
 </ForwardRef(styled.header)>
 `;
