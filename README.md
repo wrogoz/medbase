@@ -10,7 +10,7 @@
 - Mobx
 - Styled-components
 - Axios
-
+- Jest 
 
 
 
