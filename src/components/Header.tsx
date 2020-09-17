@@ -11,7 +11,7 @@ export default class Header extends React.Component<HeaderElements, {}> {
     return (
       <StyledHeader>
         <AppTitle>{this.props.title}</AppTitle>
-
+        <SubTitle>{this.props.subtitle}</SubTitle>
        
       </StyledHeader>
     );
