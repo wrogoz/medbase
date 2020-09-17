@@ -20,6 +20,7 @@ export default class Layout extends React.Component<{}, {}> {
             <Route exact path="/citySearch" component={CitySearchPage} />
             <Route exact path="/results" component={ResultsPage} />
             <Route  path="/" component={ChooseSpecialistPage} />
+            <Route  path="*" component={ChooseSpecialistPage} />
           </Switch>
 
           <Footer />
