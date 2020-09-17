@@ -8,10 +8,12 @@ import CitySearchPage from "../corePages/CitySearchPage";
 import ResultsPage from "../corePages/ResultsPage";
 import styled,{ThemeProvider} from "styled-components";
 import theme from '../../globalStyles/theme';
+import {GlobalStyles} from '../../globalStyles/globalStyles'
 export default class Layout extends React.Component<{}, {}> {
   render() {
     return (
       <ThemeProvider theme={theme}>
+        <GlobalStyles/>
         <Container>
           <Header title="medbase" subtitle="Wyszukiwarka lekarzy NFZ" />
           <Switch>
