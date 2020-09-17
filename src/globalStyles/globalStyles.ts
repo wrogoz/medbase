@@ -3,6 +3,6 @@ import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     body{
-        overscroll-behavior: contain;
+        overscroll-behavior: none;
     }
 `
