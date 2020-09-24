@@ -17,7 +17,7 @@
 
 # Features:
 
-- search a earliest possible date to a doctor (which has contract with NFZ) by specialization, district and city.
+- search an earliest possible date to a doctor (which has contract with NFZ) by specialization, district and city.
 
 
 
